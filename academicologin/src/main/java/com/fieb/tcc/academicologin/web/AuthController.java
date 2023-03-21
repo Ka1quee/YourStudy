@@ -10,12 +10,12 @@ import com.fieb.tcc.academicologin.service.UserService;
 import com.fieb.tcc.academicologin.web.dto.UserDto;
 
 @Controller
-public class UserController {
+public class AuthController {
 	
 	
 	private UserService userService;
 	
-	public UserController(UserService userService) {
+	public AuthController(UserService userService) {
 		
 		this.userService = userService;
 	}
