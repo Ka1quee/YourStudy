@@ -64,13 +64,26 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User update(User user) {
-		// TODO Auto-generated method stub
-		return null;
+	public User update(UserDto userDto) {
+		
+		User user = userRepository.findByEmail(userDto.getEmail());
+	    
+		user.setFirstName(userDto.getFirstName());
+		user.setLastName(userDto.getLastName());
+		user.setEmail(userDto.getEmail());
+		user.setAddress(userDto.getAddress());
+		user.setCep(userDto.getCep());
+		user.setCity(userDto.getCity());
+		user.setDistrict(userDto.getDistrict());
+		user.setCountry(userDto.getCountry());
+		user.setNumber(userDto.getNumber());
+		user.setState(userDto.getState());
+		
+		return userRepository.save(user);
 	}
 
 	@Override
-	public User getAuthenticatdUser() {
+	public User getAuthenticatedUser() {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String username;
 		if(principal instanceof UserDetails) {
