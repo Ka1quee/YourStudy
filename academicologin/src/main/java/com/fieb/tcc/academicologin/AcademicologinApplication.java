@@ -18,10 +18,11 @@ public class AcademicologinApplication {
 	@Bean
 	CommandLineRunner run(UserService userService) {
 		return args -> {
-			//userService.saveRole(new Role("ROLE_USER"));
-			//userService.saveRole(new Role("ROLE_ADMIN"));
-			//userService.saveRole(new Role("ROLE_INSTRUCTOR"));
-			//userService.saveRole(new Role("ROLE_STUDANT"));	
+			/*userService.saveRole(new Role("ROLE_USER"));
+			userService.saveRole(new Role("ROLE_ADMIN"));
+			userService.saveRole(new Role("ROLE_INSTRUCTOR"));
+			userService.saveRole(new Role("ROLE_STUDENT"));	
+			*/
 		};
 	}
 	
