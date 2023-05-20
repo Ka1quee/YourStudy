@@ -5,11 +5,15 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -17,29 +21,37 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="users", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="userType", discriminatorType = DiscriminatorType.STRING)
+@EnableJpaAuditing
+
 public class User {
   
 	@Id // Chave Primária
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-Incremento
-	private Long id;
+	protected Long id;
 	
 	@Column(name="first_name")
-	private String firstName;
+	protected String firstName;
 	@Column (name="last_name")
-	private String lastName;
-	private String email;
-	private String password;
-	private String address;
-	private String district;
-	private String cep;
-	private String number;
-	private String city;
-	private String state;
-	private String country;
+	protected String lastName;
+	protected String email;
+	protected String password;
+	@Column(insertable = false, updatable = false)
+	protected String userType;
+	protected String address;
+	protected String district;
+	protected String cep;
+	protected String number;
+	protected String city;
+	protected String state;
+	protected String country;
 	
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(
@@ -170,6 +182,15 @@ public class User {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+	
 	
 	
 }
