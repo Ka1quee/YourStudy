@@ -29,6 +29,11 @@ public class UserController {
 		return "login";
 	}
 	
+	@GetMapping("/users/dashboard")
+	public String dashbord() {
+		return "aluno/dashboard-aluno";
+	}
+	
 	@GetMapping("/users/home")
 	public String home(Model model) {
 		

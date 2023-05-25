@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
    <link rel="stylesheet" href="/css/main.css">
+       <script type="text/javascript" src="/js/busca_cep.js"></script>
     <title>Editar informações</title>
 </head>
 <style>
@@ -19,7 +20,7 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        height: 550px;
+        height: 900px;
         width: 100%;
         background-color: transparent;
         border-radius: 20px;
@@ -80,6 +81,19 @@
     .input-box{
         padding: 3px;
     }
+    
+    form{
+		width: 100%;
+	}
+	
+.teste{
+	width: 500px;
+}
+
+.btn{
+	width: 500px;
+	margin-top: 30px;
+}
 </style>
 
 <body>
@@ -116,28 +130,86 @@
                         </div>
 
                         <div class="informacoes">
-                           	<form th:action="@{/users/perfil}" method="post" th:object="${user}">
-                                <div class="input-box position-relative">
-                                    <label for="nome" class="form-label">Nome</label>
-                                    <input type="text" class="form-control inputs" id="nome" th:field="*{firstName}">
-                                </div>
+				<form th:action="@{/users/perfil}" method="post" th:object="${user}">
+					<div class="form-group">
+						<label class="control-label" for="firstName"> First Name </label>
+						<input id="firstName" class="form-control teste" th:field="*{firstName}"
+							required autofocus="autofocus" />
+					</div>
 
-                                <div class="input-box position-relative">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="text" class="form-control inputs" id="email" th:field="*{lastName}">
-                                </div>
+					<div class="form-group">
+						<label class="control-label" for="lastName"> Last Name </label> <input
+							id="lastName" class="form-control" th:field="*{lastName}"
+							required autofocus="autofocus" />
+					</div>
 
-                                <div class="input-box position-relative">
-                                    <label for="telefone" class="form-label">Telefone celular</label>
-                                    <input type="text"  class="form-control inputs" id="telefone">
-                                </div>
+					<div class="form-group">
+						<label class="control-label" for="email"> Email </label> <input
+							id="email" class="form-control" th:field="*{email}" 
+							onblur=""
+							required
+							autofocus="autofocus" readonly/>	
+					</div>
+					
+					<div id="campo_email" class="alert alert-danger" style="display: none"></div>
+					
+					<div class="form-group">
+						<label class="control-label" for="cep"> Cep </label> <input
+							id="cep" class="form-control" th:field="*{cep}" 
+							onblur="pesquisacep(this.value);"
+							required
+							autofocus="autofocus" />	
+					</div>
 
-                                <div class="input-box position-relative">
-                                    <label for="cep" class="form-label">CEP</label>
-                                    <input type="text" class="form-control inputs" id="cep">
-                                </div>
-                                <button class="btn btn-success send">Salvar informações</button>
-                            </form>
+					<div class="form-group">
+						<label class="control-label" for="address"> Logradouro </label> <input
+							id="rua" class="form-control" th:field="*{address}" 
+							required
+							autofocus="autofocus" />	
+					</div>
+					
+						<div class="form-group">
+				     <label class="control-label" for="number"> Número </label> <input
+							id="number" class="form-control" th:field="*{number}" 
+							required
+							autofocus="autofocus" />	
+					</div>
+					
+						
+						<div class="form-group">
+				     <label class="control-label" for="district"> Bairro </label> <input
+							id="bairro" class="form-control" th:field="*{district}" 
+							required
+							autofocus="autofocus" />	
+					</div>
+						<div class="form-group">
+						<label class="control-label" for="city"> Cidade</label> <input
+							id="cidade" class="form-control" th:field="*{city}" 
+							required
+							autofocus="autofocus" />	
+					</div>
+						<div class="form-group">
+						<label class="control-label" for="state"> Estado </label> <input
+							id="uf" class="form-control" th:field="*{state}" 
+							required
+							autofocus="autofocus" />	
+					</div>
+					
+						<div class="form-group">
+						<label class="control-label" for="country"> País </label> <input
+							id="country" class="form-control" th:field="*{country}" 
+							required
+							autofocus="autofocus" />	
+					</div>
+
+					<div class="form-group">
+						<button type="submit" class="btn btn-success"
+						id="botao"
+						onclick=""
+						>Atualizar Perfil</button>
+						
+					</div>
+				</form>
                            
                         </div>
                     </div>

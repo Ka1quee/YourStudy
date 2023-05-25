@@ -83,6 +83,7 @@
 				<a class="navbar-brand text-light">Y.our Study</a>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
+			<h1 class = "text-light"> teste</h1>
 					<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
 					<li><a th:href="@{/users/perfil/{username}(username=${username})}">Perfil</a></li>
 				</ul>
