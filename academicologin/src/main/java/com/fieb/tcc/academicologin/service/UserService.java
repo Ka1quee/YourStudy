@@ -12,6 +12,7 @@ import com.fieb.tcc.academicologin.web.dto.UserDto;
 public interface UserService extends UserDetailsService {
 	
 	User save(UserDto userDto);
+	User saveAdmin(UserDto userDto);
 	User findByEmail(UserDto userDto);
 	User update(UserDto userDto);
 	User getAuthenticatedUser();

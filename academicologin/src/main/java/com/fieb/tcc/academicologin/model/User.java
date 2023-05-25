@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @DiscriminatorColumn(name="userType", discriminatorType = DiscriminatorType.STRING)
 @EnableJpaAuditing
 
-public class User {
+public abstract class User {
   
 	@Id // Chave Primária
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-Incremento

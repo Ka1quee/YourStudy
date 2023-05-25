@@ -54,7 +54,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				"/img/**"
 				).permitAll()
 		      .and()
-		      .authorizeRequests().antMatchers(GET, "/users/**").hasAnyAuthority("ROLE_USER")
+		      .authorizeRequests()
+		      .antMatchers(GET, "/users/**").hasAnyAuthority("ROLE_USER")
+		      .antMatchers(GET, "/alunos/**").hasAnyAuthority("ROLE_STUDENT")
+		      .antMatchers(GET, "/admin/**").hasAnyAuthority("ROLE_ADMIN")
 	          .anyRequest().authenticated()
 	          .and()
 	          .formLogin().defaultSuccessUrl("/users/home", true)

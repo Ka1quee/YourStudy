@@ -15,7 +15,7 @@ public class Aluno extends User {
 		
 	}
 
-	public Aluno(Long id,String firstName, String lastName, String email, String password, Collection<Role> roles) {
+	public Aluno(String firstName, String lastName, String email, String password, Collection<Role> roles) {
 		super(firstName, lastName, email, password, roles);
 	}
 

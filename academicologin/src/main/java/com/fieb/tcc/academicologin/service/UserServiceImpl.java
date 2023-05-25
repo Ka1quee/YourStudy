@@ -14,6 +14,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.fieb.tcc.academicologin.model.Admin;
+import com.fieb.tcc.academicologin.model.Aluno;
 import com.fieb.tcc.academicologin.model.Role;
 import com.fieb.tcc.academicologin.model.User;
 import com.fieb.tcc.academicologin.repository.RoleRepository;
@@ -53,7 +55,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User save(UserDto userDto) {
 		
-		User user = new User(userDto.getFirstName(), 
+		User user = new Aluno(userDto.getFirstName(), 
 				             userDto.getLastName(), 
 				             userDto.getEmail(), 
 				             passwordEncoder.encode(userDto.getPassword()), 
@@ -62,9 +64,28 @@ public class UserServiceImpl implements UserService {
 		
 		userRepository.save(user);
 		this.addRoleToUser(user.getEmail(), "ROLE_USER");
+		this.addRoleToUser(user.getEmail(), "ROLE_STUDENT");
 		return user;
 		
 	}
+	
+	@Override
+	public User saveAdmin(UserDto userDto) {
+		
+		User user = new Admin(userDto.getFirstName(), 
+				             userDto.getLastName(), 
+				             userDto.getEmail(), 
+				             passwordEncoder.encode(userDto.getPassword()), 
+				              new ArrayList<>());
+				             //Arrays.asList(new Role("ROLE_USER")));
+		
+		userRepository.save(user);
+		this.addRoleToUser(user.getEmail(), "ROLE_USER");
+		this.addRoleToUser(user.getEmail(), "ROLE_ADMIN");
+		return user;
+		
+	}
+
 
 	@Override
 	public User findByEmail(UserDto userDto) {
