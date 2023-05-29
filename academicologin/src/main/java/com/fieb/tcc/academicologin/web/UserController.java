@@ -26,13 +26,9 @@ public class UserController {
 	
 	@GetMapping("/login")
 	public String login() {
-		return "login";
+		return "aluno/aluno-login";
 	}
 	
-	@GetMapping("/users/dashboard")
-	public String dashbord() {
-		return "aluno/dashboard-aluno";
-	}
 	
 	@GetMapping("/users/home")
 	public String home(Model model) {

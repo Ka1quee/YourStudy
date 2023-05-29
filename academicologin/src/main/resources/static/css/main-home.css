@@ -1,0 +1,197 @@
+.nav-bar{
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  width: 100%;
+  border-bottom: 1px solid #6427a1;
+}
+
+a{
+  padding: 7px;
+}
+
+.nav-ink{
+  display: flex;
+  justify-content: space-between;
+  font-size: 17px;
+  width: 70%;
+  flex-wrap: wrap;
+}
+
+/* secao primaria */
+
+.secao-primaria, .secao-secundaria, .secao-terciaria, .secao-quarta {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    height: 600px;
+    width: 100%;
+  }
+  .container-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+  }
+  
+  .img-front {
+    height: 470px;
+  }
+  
+  .texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+    height: 100%;
+    width: 50%;
+    gap: 20px
+  }
+  
+  .titulo-front-end {
+    font-size: 70px;
+    font-weight: 700;
+  }
+  
+  .btn-conhecer {
+    width: 50%;
+  }
+  
+  /* secao secundaria */
+  .secao-secundaria{
+    flex-direction: row-reverse;
+    border-top: 1px solid #6427a1;
+    border-radius: 10px;
+  }
+
+  .secao-secundaria, .secao-terciaria, .secao-quarta{
+    border-top: 1px solid #6427a1;
+    border-radius: 10px;
+  }
+  
+  .conteudos-titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 10%;
+    width: 100%;
+  }
+  
+  .titulo-conteudos-disponiveis,
+  .titulo-resumo-conteudos {
+    font-size: 30px;
+  }
+
+  .subtitulo-conteudos{
+    color: white;
+    opacity: 80%;
+  }
+
+
+  /* cards */
+  
+  .container-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+    width: 100%;
+  }
+  
+  .card {
+    height: 250px;
+    width: 350px;
+    border-top: 5px solid orangered;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+  }
+  
+  .card:hover {
+    box-shadow: 10px 7px 4px 0px rgba(0, 0, 0, 0.43);
+    transition: 0.3s;
+  }
+  
+  .texto-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    height: 65%;
+    width: 100%;
+  }
+  
+  .descricao-card {
+    color: rgb(196, 196, 196);
+  }
+  
+  .container-img-card {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .img-area {
+    height: 70px;
+  }
+  .border-html {
+    border-top: 5px solid orangered;
+  }
+  
+  .border-css {
+    border-top: 5px solid rgb(12, 55, 173);
+  }
+  
+  .border-js {
+    border-top: 5px solid yellow;
+  }
+  
+  /* secao 3 */
+
+  .secao-terciaria{
+    display: flex;
+  }
+  
+  .container-percursos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    height: 100%;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  
+  .container-direito, .container-esquerdo{
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      text-align: start;
+      height: 100%;
+      width: 50%;
+      gap: 20px;
+  }
+    /* Secao quarta */
+    .secao-quarta{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      height: 500px;
+    }
+  
+  footer{
+  margin-top:600px;
+  }
+  
+  
+  
+  
+  
+  
