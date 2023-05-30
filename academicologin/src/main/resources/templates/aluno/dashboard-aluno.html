@@ -17,6 +17,18 @@
 .cursos{
 	font-size: 30px;
 }
+
+.welcome-back{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	height: 50px;
+	border-bottom: 1px solid #6427a1;
+}
+
+.welcome-back > h1{
+	font-size: 25px;
+}
 </style>
 
 <body>
@@ -36,8 +48,11 @@
 		<div class="container-funcoes">
 
 			<div class="container-texto-categoria">
-
+			<div class ="welcome-back">	<h1 class="titulo-categoria text-light">Bem vindo de volta, <span class="react" sec:authentication="principal.username"> User</span></h1>
+			</div>
+		
 				<div class="texto-categoria">
+				
 					<h1 class="titulo-categoria text-light">DASHBOARD</h1>
 				</div>
 
@@ -45,7 +60,7 @@
 			</div>
 
 			<div class="container-central container ">
-				<a th:href="@{/usuario/perfil}">
+				<a th:href="@{/users/perfil/{username}(username=${username})}">
 					<div class="funcao bg-dark" id="color1">
 						<!-- <div class="icon-funcao"> -->
 						<img src="/assets/img/user.png" alt="" class="icon">

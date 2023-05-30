@@ -11,4 +11,13 @@ public class AlunoController {
 		return "aluno/dashboard-aluno";
 	}
 	
+	@GetMapping("/users/perfil-teste")
+	public String perfilTeste() {
+		return "aluno/aluno-perfil";
+	}
+	
+	@GetMapping("/users/front-end")
+	public String frontEnd() {
+		return "aluno/front-end-home";
+	}
 }

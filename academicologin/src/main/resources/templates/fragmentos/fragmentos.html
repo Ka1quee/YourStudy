@@ -111,13 +111,13 @@
 
 	<div th:fragment="side-bar-user" class="side-bar bg-dark">
 		<div class="menu">
-			<div class="item"><a th:href="@{/usuario/home}"><i class="fas fa-desktop"></i>Dashboard</a></div>
+			<div class="item"><a th:href="@{/users/home}"><i class="fas fa-desktop"></i>Inicio</a></div>
 			<div class="item">
-				<a class="sub-btn"><i class="fas fa-table"></i>Atividades<i class="fas fa-angle-right dropdown"></i></a>
+				<a class="sub-btn"><i class="fas fa-table"></i>Conteúdos<i class="fas fa-angle-right dropdown"></i></a>
 				<div class="sub-menu">
-					<a th:href="@{/frontend}" class="sub-item">Front-end</a>
-					<a href="#" onclick="abrirPag(`backend`)" class="sub-item">Back-End</a>
-					<a href="#" class="sub-item">Data Science</a>
+					<a th:href="@{/frontend}" class="sub-item">HTML</a>
+					<a href="#" onclick="abrirPag(`backend`)" class="sub-item">CSS</a>
+					<a href="#" class="sub-item">Java Script</a>
 				</div>
 			</div>
 
@@ -131,9 +131,6 @@
 				</div>
 			</div>-->
 
-			<div class="item">
-				<a th:href="@{/listanotificacao}"><i class="fas fa-bell"></i>Notificações</a>
-			</div>
 
 			<div class="item">
 				<a th:href="@{/users/perfil/{username}(username=${username})}"><i class="fas fa-th"></i>Minha conta</a>
