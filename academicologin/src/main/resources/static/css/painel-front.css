@@ -50,7 +50,13 @@ html {
 }
 
 
-
+.conteudo{
+    height: 140vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+} 
 
 .funcao {
   display: flex;
@@ -168,16 +174,15 @@ strong {
   color: blue;
 }
 
-.side-bar {
-  width: 250px;
-  height: 100vh;
+.side-bar{
+  width: 260px;
+  height: 220vh;
   background-color: blue;
   overflow-y: auto;
   transition-property: left;
-  position: fixed;
-  top: 0;
+  top:0;
   background-color: #2e7bab;
-
+  
 }
 
 /* .side-bar{

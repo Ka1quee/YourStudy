@@ -7,17 +7,20 @@
   align-items: center;
   height: 500px;
   width: 100%;
+  flex-wrap: wrap;
+  border-radius: 10px;
+    border-bottom: 1px solid #2e7bab;
 }
 .container-img {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 40%;
+  width: 50%;
 }
 
 .img-front {
-  height: 350px;
+  height: 460px;
 }
 
 .texto {
@@ -47,6 +50,8 @@
   text-align: center;
   height: 500px;
   width: 100%;
+  border-radius: 10px;
+    border-top: 1px solid #2e7bab;
 }
 
 .conteudos-titulo {
@@ -61,6 +66,17 @@
 .titulo-resumo-conteudos {
   font-size: 30px;
 }
+
+/* secao-terciaria */
+
+.secao-terciaria {
+  height: 800px;
+  width: 100%;
+  
+  border-radius: 10px;
+}
+
+.container
 
 /* cards */
 
@@ -121,33 +137,83 @@
 
 /* secao 3 */
 
-.container-percursos {
+.container-escolha{
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 30px;
-  height: 100%;
-  width: 100%;
-  gap: 10px;
+  flex-direction: column;
+  gap: 40px;
+padding: 30px;
 }
 
+	.card-atividade-recente {
+		display: flex;
+		height: 220px;
+		width: 80%;
+		background-color: white;
+	}
 
-.container-direito, .container-esquerdo{
+	.info-direita {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		justify-content: center;
+		padding: 20px;
+		height: 100%;
+		width: 35%;
+		background-color: rgb(61, 155, 61);
+		overflow: auto;
+	}
+
+  .container-tecnologias{
     display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    text-align: start;
-    height: 100%;
-    width: 50%;
-    gap: 20px;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60%;
+  }
+
+  .img-tec{
+    height: 50px;
+  }
+
+	.info-esquerda {
+		display: flex;
+		flex-direction: column;
+		width: 65%;
+		display: flex;
+		justify-content: space-between;
+		overflow: auto;
+	}
+
+	.info-esquerda-titulo {
+		height: 90%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 20px;
+	}
+
+	.botoes {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+		gap: 10px;
+	}
+
+   .botao-visualizar{
+    width: 35%;
+   }
+
+footer {
+  margin-top: 600px;
 }
 
-footer{
-margin-top:600px;
+.container-funcoes {
+  height: 500px;
 }
 
-
-
-
-
+.container-cards {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 80%;
+  margin-top: 20px;
+}

@@ -36,7 +36,7 @@ public class UserController {
 		String username = userService.getAuthenticatedUser().getEmail();
 		model.addAttribute("username", username);
 		
-		return "aluno/dashboard-aluno";
+		return "aluno/aluno-home";
 	}
 	
 	@GetMapping("/users/perfil/{username}")

@@ -18,6 +18,8 @@ public class AlunoController {
 	
 	@GetMapping("/users/front-end")
 	public String frontEnd() {
-		return "aluno/front-end-home";
+		return "aluno/aluno-home";
 	}
+	
+	
 }

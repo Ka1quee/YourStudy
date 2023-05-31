@@ -115,9 +115,8 @@
 			<div class="item">
 				<a class="sub-btn"><i class="fas fa-table"></i>Conteúdos<i class="fas fa-angle-right dropdown"></i></a>
 				<div class="sub-menu">
-					<a th:href="@{/frontend}" class="sub-item">HTML</a>
-					<a href="#" onclick="abrirPag(`backend`)" class="sub-item">CSS</a>
-					<a href="#" class="sub-item">Java Script</a>
+					<a th:href="@{/users/artigos}" class="sub-item">Guais</a>
+					<a th:href="@{/users/exercicios}" class="sub-item">Exercícios </a>
 				</div>
 			</div>
 
@@ -129,11 +128,14 @@
 					<a th:href="@{/meus-projetos}" onclick="abrirPag(`backend`)" class="sub-item">Meus projetos</a>
 					<a href="#" class="sub-item">Data Science</a>
 				</div>
-			</div>-->
+			</div>
+			
+			
+				<a th:href="@{/users/perfil/{username}(username=${username})}">-->
 
 
 			<div class="item">
-				<a th:href="@{/users/perfil/{username}(username=${username})}"><i class="fas fa-th"></i>Minha conta</a>
+				<a th:href="@{/users/dashboard}"><i class="fas fa-th"></i>Área do usuário</a>
 			</div>
 
 			<div class="item"><a href="index.html"><i class="fas fa-info-circle"></i>Sobre</a></div>

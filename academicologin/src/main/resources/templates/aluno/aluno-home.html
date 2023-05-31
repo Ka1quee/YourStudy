@@ -20,67 +20,21 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="painel-front-end.css" />
-    <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="/css/niveis-html.css" />
-    <link rel="stylesheet" href="cards-atividade.css" />
+    <link rel="stylesheet" href="/css/painel-front.css" />
+    <link rel="stylesheet" href="/css/main-front.css" />
+    <link rel="stylesheet" href="/css/cards.css" />
     <title>Inicio</title>
   </head>
   <style></style>
 
   <body>
     <!-- Cabecalho -->
-    <header th:fragment="cabecalho2" class="cabecalho">
-      <nav class="navbar bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand text-light">Y.our Study</a>
-          <form class="d-flex" role="search">
-            <button class="btn btn-danger sair" type="submit">Sair</button>
-          </form>
-        </div>
-      </nav>
-    </header>
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
 
     <!-- side-bar -->
 
     <main class="conteudo">
-      <div th:fragment="side-bar-user" class="side-bar bg-dark">
-        <div class="menu">
-          <div class="item">
-            <a th:href="@{/usuario/home}"
-              ><i class="fas fa-desktop"></i>Dashboard</a
-            >
-          </div>
-          <div class="item">
-            <a class="sub-btn"
-              ><i class="fas fa-table"></i>Atividades<i
-                class="fas fa-angle-right dropdown"
-              ></i
-            ></a>
-            <div class="sub-menu">
-              <a th:href="@{/frontend}" class="sub-item">Front-end</a>
-              <a href="#" onclick="abrirPag(`backend`)" class="sub-item"
-                >Back-End</a
-              >
-              <a href="#" class="sub-item">Data Science</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <a th:href="@{/listanotificacao}"
-              ><i class="fas fa-bell"></i>Notificações</a
-            >
-          </div>
-
-          <div class="item">
-            <a href="#"><i class="fas fa-th"></i>Minha conta</a>
-          </div>
-
-          <div class="item">
-            <a href="index.html"><i class="fas fa-info-circle"></i>Sobre</a>
-          </div>
-        </div>
-      </div>
+		<div th:replace="fragmentos/fragmentos :: side-bar-user"></div>
       <!-- introducao -->
       <div class="conteudo-pagina container">
         <section class="secao-primaria container">
@@ -97,7 +51,7 @@
           </div>
 
           <div class="container-img">
-            <img src="front-end.svg" alt="" class="img-front" />
+            <img src="/img/front-end.svg" alt="" class="img-front" />
           </div>
         </section>
 
@@ -118,15 +72,15 @@
                   Artigos sobre Tecnologia<br />para Programadores
                 </h3>
                 <div class="container-tecnologias">
-                  <img src="html.png" class="img-tec" alt="" />
-                  <img src="css.png" class="img-tec" alt="" />
-                  <img src="js.png" class="img-tec" alt="" />
+                  <img src="/img/html.png" class="img-tec" alt="" />
+                  <img src="/img/css.png" class="img-tec" alt="" />
+                  <img src="/img/js.png" class="img-tec" alt="" />
                 </div>
               </div>
 
               <div class="info-esquerda">
                 <div class="info-esquerda-titulo">
-                  <h7 class="text-light">Artigos</h7>
+                  <h7 class="text-light">Guias de estudo</h7>
                   <h3 class="text-light">
                     Confira nosos artigos sobre os principais conceitos do
                     Front-End
@@ -136,7 +90,7 @@
                     <a href="#modal_1">
                       <!-- <button class="btn btn-primary">Conhecer</button> -->
                     </a>
-                    <a class="btn btn-primary botao-visualizar">Visualizar</a>
+                    <a th:href="@{/users/artigos}" class="btn btn-primary botao-visualizar">Visualizar</a>
                   </div>
                 </div>
               </div>
@@ -151,9 +105,9 @@
                   Exercicios sobre Front-End<br />para Iniciantes
                 </h3>
                 <div class="container-tecnologias">
-                  <img src="html.png" class="img-tec" alt="" />
-                  <img src="css.png" class="img-tec" alt="" />
-                  <img src="js.png" class="img-tec" alt="" />
+                  <img src="/img/html.png" class="img-tec" alt="" />
+                  <img src="/img/css.png" class="img-tec" alt="" />
+                  <img src="/img/js.png" class="img-tec" alt="" />
                 </div>
               </div>
 
@@ -166,7 +120,7 @@
                   </h3>
 
                   <div class="botoes">
-                    <a class="btn btn-primary botao-visualizar">Visualizar</a>
+                    <a th:href="@{/users/exercicios}" class="btn btn-primary botao-visualizar">Visualizar</a>
                   </div>
                 </div>
               </div>
@@ -190,7 +144,7 @@
               </div>
 
               <div class="container-img-card">
-                <img class="img-area" src="html.png" alt="" />
+                <img class="img-area" src="/img/html.png" alt="" />
               </div>
             </div>
 
@@ -203,7 +157,7 @@
               </div>
 
               <div class="container-img-card">
-                <img class="img-area" src="css.png" alt="" />
+                <img class="img-area" src="/img/css.png" alt="" />
               </div>
             </div>
 
@@ -216,7 +170,7 @@
               </div>
 
               <div class="container-img-card">
-                <img class="img-area" src="js.png" alt="" />
+                <img class="img-area" src="/img/js.png" alt="" />
               </div>
             </div>
           </div>
