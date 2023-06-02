@@ -17,6 +17,22 @@
 	<title>Inicio</title>
 </head>
 <style>
+	.conteudo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
+
+
+	.secao-primaria {
+		display: flex;
+		width: 100%;
+		padding: 30px;
+		flex-wrap: wrap;
+		border: none;
+	}
+
 	.card {
 		padding: 30px;
 		border: 2px solid #6427a1;
@@ -24,14 +40,22 @@
 		width: 100%;
 	}
 
+	.texto,
+	.container-img {
+		width: 50%;
+	}
+
 	.login-form {
 		width: 500px;
 		color: white;
+
 	}
 
-form{
-	height: 100%;
-}
+
+	form {
+		height: 100%;
+	}
+
 	.cadastre {
 		display: flex;
 		flex-direction: column;
@@ -73,11 +97,14 @@ form{
 		color: #FFF;
 	}
 
+	.botao:hover {
+		background-color: rgb(72, 29, 116);
+	}
 </style>
 
 <body>
 	<!-- Cabecalho -->
-	<div th:replace="fragmentos/fragmentos :: cabecalho2"></div>
+	<div th:replace="fragmentos/fragmentos :: cabecalhologin"></div>
 
 	<!-- side-bar -->
 

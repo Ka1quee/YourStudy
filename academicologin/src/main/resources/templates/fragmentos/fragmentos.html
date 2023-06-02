@@ -14,18 +14,35 @@
 	<title>Document</title>
 </head>
 <style>
+
 </style>
 
 <body>
 
+<!-- header login -->
+	<header th:fragment="cabecalhologin" class="cabecalho">
+
+		<nav class="navbar nav bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand text-light">Y.our Study</a>
+			</div>
+			
+			
+		</nav>
+
+
+	</header>
+
 	<!--dizendo q esse elemento é um fragmento e dando um nome a ele -->
 	<header th:fragment="cabecalho" class="cabecalho">
 
-		<nav class="navbar bg-dark">
+		<nav class="navbar nav bg-dark">
 			<div class="container-fluid">
 				<a class="navbar-brand text-light">Y.our Study</a>
-
+				 <a th:href = "@{/users/dashboard}"}class="react" sec:authentication="principal.username"> User</a>
 			</div>
+			
+			
 		</nav>
 
 

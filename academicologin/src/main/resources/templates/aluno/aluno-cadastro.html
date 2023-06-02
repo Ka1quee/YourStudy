@@ -14,13 +14,15 @@
 	<title>Cadastro</title>
 </head>
 <style>
-.conteudo{
-	display: flex;;
-	
+	.container-erro {
 
-}
+		font-size: 12px;
+		color: red;
+	}
 
-
+	.teste {
+		margin-top: 20px;
+	}
 
 	.card {
 		width: 50%;
@@ -28,15 +30,10 @@
 		border-radius: 0px;
 		overflow: auto;
 	}
-	
-	.container-funcoes{
-		width: 70%;
-		height: 100%;
-	}
 
 	.card-container {
 		display: flex;
-		height: 600px;
+		height: 500px;
 		width: 80vw;
 		background-color: blue;
 
@@ -81,25 +78,6 @@
 	.icon {
 		height: 450px;
 	}
-
-	.botao {
-		width: 100%;
-		margin-top: 20px;
-		background-color: #6427a1;
-		color: #FFF;
-	}
-	
-	.botao:hover{
-		background-color: rgb(72, 29, 116);
-	}
-
-	.opcoes {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		margin-top: 20px;
-
-	}
 </style>
 
 <body>
@@ -120,66 +98,58 @@
 					<div class="texto-form">
 						<h1 class="texto"></h1>
 					</div>
-					<img src="/img/registro.svg" alt="" class="icon">
+					<img src="/assets/img/login-animate.svg" alt="" class="icon">
 				</div>
 
 				<div class="card bg-dark text-light container">
-
-					<div th:if="${param.success}">
-						<div class="alert alert-info">You've successfully registered
-							to our awesome app!</div>
-					</div>
 					<div class="form-header mb-3 container">
 						<h1>Cadastre-se</h1>
 						<h5>Insira suas informações</h2>
 					</div>
 
 					<!-- Na tag form precisamos dizer q o método é post e precisamos trazer o objeto usuario-->
-					<form th:action="@{/registration}" method="post" th:object="${user}">
-						<div class="form-group">
-							<label class="control-label" for="firstName"> First Name </label>
-							<input id="firstName" class="form-control" th:field="*{firstName}" required
-								autofocus="autofocus" />
-						</div>
-
-						<div class="form-group">
-							<label class="control-label" for="lastName"> Last Name </label> <input id="lastName"
-								class="form-control" th:field="*{lastName}" required autofocus="autofocus" />
-						</div>
-
-						<div class="form-group">
-							<label class="control-label" for="email"> Email </label> <input id="email"
-								class="form-control" th:field="*{email}"
-								onblur="validarDados('email', document.getElementById('email').value,'/registration/ajax/getEmail/');"
-								required autofocus="autofocus" />
-						</div>
-
-						<div id="campo_email" class="alert alert-danger" style="display: none"></div>
-
-						<div class="form-group">
-							<label class="control-label" for="password"> Password </label> <input id="password"
-								class="form-control" type="password" th:field="*{password}" required
-								autofocus="autofocus" />
-						</div>
-
-						<button type="submit" class="btn botao" id="botao" onclick="">Register</button>
-
-					</form>
-
-					<div class="opcoes">
-						<div class="form-group">
-							<span>Ja possui cadastro? <a href="/" th:href="@{/login}">Entre com sua conta</a></span>
-						</div>
-						<div class="form-group">
-							<span>Esqueceu sua senha? <a href="/" th:href="@{/recover}">Recupere aqui
-								</a></span>
-						</div>
-
+				<form th:action="@{/registration}" method="post" th:object="${user}">
+					<div class="form-group">
+						<label class="control-label" for="firstName"> First Name </label>
+						<input id="firstName" class="form-control" th:field="*{firstName}"
+							required autofocus="autofocus" />
 					</div>
 
+					<div class="form-group">
+						<label class="control-label" for="lastName"> Last Name </label> <input
+							id="lastName" class="form-control" th:field="*{lastName}"
+							required autofocus="autofocus" />
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="email"> Email </label> <input
+							id="email" class="form-control" th:field="*{email}" 
+							onblur="validarDados('email', document.getElementById('email').value,'/registration/ajax/getEmail/');"
+							required
+							autofocus="autofocus" />	
+					</div>
+					
+					<div id="campo_email" class="alert alert-danger" style="display: none"></div>
+
+					<div class="form-group">
+						<label class="control-label" for="password"> Password </label> <input
+							id="password" class="form-control" type="password" th:field="*{password}" 
+							required 
+							autofocus="autofocus" />
+					</div>
+
+					<div class="form-group">
+						<button type="submit" class="btn btn-success"
+						id="botao"
+						onclick=""
+						>Register</button>
+						<span>Already registered? <a href="/" th:href="@{/login}">Login
+								here</a></span>
+					</div>
+				</form>
 				</div>
 
-			</div>
+
 
 			</div>
 

@@ -21,5 +21,9 @@ public class AlunoController {
 		return "aluno/aluno-home";
 	}
 	
+	@GetMapping("/users/cadastro")
+	public String cadastro() {
+		return "aluno/aluno-cadastro";
+	}
 	
 }
