@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/admin/guia-cadastro.css">
+		<link rel="stylesheet" href="/css/main.css">
+	<title>Cadastro de Guias</title>
+</head>
+<style>
+	.container-erro {
+
+		font-size: 12px;
+		color: red;
+	}
+
+	.teste {
+		margin-top: 20px;
+	}
+	
+	.side-bar{
+		height: 200vh;
+	}
+	
+	.card{
+		
+	}
+</style>
+
+<body>
+
+	<!-- Cabecalho -->
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+
+
+	<section class="conteudo">
+		<div th:replace="fragmentos/fragmentos :: side-bar"></div>
+
+
+		<div class="container-funcoes">
+
+
+			<div class="container">
+				<div class="card bg-dark text-light">
+					<div class="form-header mb-3 container">
+						<h1 class="css">Cadastro de Guias de Estudo</h1>
+						<h5>Insira as informações</h2>
+					</div>
+
+				
+                <form class="form">
+                    <div class="input-group">
+
+                        <div class="input-box">
+                            <label class="text-light" for="titulo">Titulo</label>
+                            <input type="text" name="" id="titulo" placeholder="Digite o Titulo">
+                        </div>
+                        <div class="input-box">
+                            <label class="text-light" for="descricao">Descrição</label>
+                            <input type="text" name="" id="descricao" placeholder="Digite a descrição">
+                        </div>
+
+                        <div class="input-box">
+                            <label class="text-light" for="conteudo-escrito">Conteudo escrito</label>
+                           <textarea name="" id="conteudo-escrito" cols="30" rows="10" class="text-area"></textarea>
+                        </div>
+
+                        <div class="input-box">
+                            <label class="text-light" for="img-exemplo">Imagens de exemplo</label>
+                            <input class="sem-borda" type="file" name="" id="img-exemplo" placeholder="">
+                            <input class="sem-borda" type="file" name="" id="img-exemplo" placeholder="">
+                        </div>
+
+                        <div class="input-box">
+                            <label class="text-light" for="finalizacao">Finalização</label>
+                           <textarea name="" id="finalizacao" cols="30" rows="10" class="text-area"></textarea>
+                        </div>
+                        
+                        <div class="container-botao">
+                            <button class="btn btn-primary">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+				</div>
+
+
+
+			</div>
+
+	</section>
+
+
+
+	<script src="/assets/js/abrirPagina.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			$('.sub-btn').click(function () {
+				$(this).next('.sub-menu').slideToggle();
+				$(this).find('.dropdown').toggleClass('rotate');
+			});
+
+			$('.menu-btn').click(function () {
+				$('.side-bar').addClass('active');
+				$('.menu-btn').css("visibility", "hidden");
+			});
+
+			$('.close-btn').click(function () {
+				$('.side-bar').removeClass('active');
+				$('.menu-btn').css("visibility", "visible");
+			});
+
+		});
+
+
+	</script>
+
+</body>
+
+</html>

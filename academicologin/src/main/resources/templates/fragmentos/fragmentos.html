@@ -57,13 +57,20 @@
 
 	<div th:fragment="side-bar" class="side-bar bg-dark">
 		<div class="menu">
-			<div class="item"><a th:href="@{/admin/dashboard}"><i class="fas fa-desktop"></i>Dashboard</a></div>
+			<div class="item"><a th:href="@{/users/admin-home}"><i class="fas fa-desktop"></i>Dashboard</a></div>
 			<div class="item">
-				<a class="sub-btn"><i class="fas fa-table"></i>Equipes<i class="fas fa-angle-right dropdown"></i></a>
+				<a class="sub-btn"><i class="fas fa-table"></i>Guias<i class="fas fa-angle-right dropdown"></i></a>
 				<div class="sub-menu">
-					<a href="#" onclick="abrirPag(`frontend`)" class="sub-item">Front-end</a>
-					<a href="#" onclick="abrirPag(`backend`)" class="sub-item">Back-End</a>
-					<a href="#" class="sub-item">Data Science</a>
+				<a th:href="@{/users/guia-cadastro}" class="sub-item">Cadastrar</a>
+					<a href="#" onclick="abrirPag(`backend`)" class="sub-item">Listar</a>
+				</div>
+			</div>
+			
+						<div class="item">
+				<a class="sub-btn"><i class="fas fa-table"></i>Exercícios<i class="fas fa-angle-right dropdown"></i></a>
+				<div class="sub-menu">
+					<a href="#" onclick="abrirPag(`frontend`)" class="sub-item">Cadastrar</a>
+					<a href="#" onclick="abrirPag(`backend`)" class="sub-item">Listar</a>
 				</div>
 			</div>
 
@@ -76,7 +83,7 @@
 			</div>
 
 
-
+<!--
 			<div class="item">
 				<a class="sub-btn"><i class="fas fa-cogs"></i>Admin<i class="fas fa-angle-right dropdown"></i></a>
 				<div class="sub-menu">
@@ -84,23 +91,11 @@
 					<a th:href="@{/admin/listagem}">Lista</a>
 				</div>
 			</div>
+			-->
 
-			<div class="item">
-				<a class="sub-btn"><i class="fas fa-cogs"></i>Solicitações<i
-						class="fas fa-angle-right dropdown"></i></a>
-				<div class="sub-menu">
-					<a th:href="@{/listagemsolicitacao}" class="sub-item">Usuario</a>
 
-				</div>
-			</div>
 
-			<div class="item">
-				<a th:href="@{/admin/notificacao}"><i class="fas fa-bell"></i>Notificar</a>
-			</div>
 
-			<div class="item">
-				<a th:href="@{/escolha}"><i class="fas fa-th"></i>Minha conta</a>
-			</div>
 
 			<div class="item"><a href="index.html"><i class="fas fa-info-circle"></i>Sobre</a></div>
 		</div>
