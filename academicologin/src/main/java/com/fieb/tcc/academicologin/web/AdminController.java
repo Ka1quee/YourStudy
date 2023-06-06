@@ -12,6 +12,14 @@ public class AdminController {
 		return "admin/admin-home";
 	}
 	
+	@GetMapping("/users/aluno-cadastro")
+	public String alunoCadastro() {
+		return "admin/aluno-cadastro";
+	}
+	
+	
+	
+	
 
 
 }

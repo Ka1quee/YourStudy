@@ -61,6 +61,27 @@ public class GuiasController {
 	
 	// Fazer método pra entrar nos cards dos guias
 	
+	
+	
+	
 
-
+// listagem dos guias em tabela
+	
+	@GetMapping("/users/guia-list")
+	public ModelAndView guiaList() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("conteudo/listagem-de-guias");
+		mv.addObject("guiaList", guiarepositorio.findAll()); 
+		
+		return mv;
+	}
+	
+	//exclusao dos cadastros dos guias
+	
+	@GetMapping("/users/excluir-guia/{id}")
+	public String excluirGuia(@PathVariable("id") Long id) {
+		guiarepositorio.deleteById(id); // dessa vez usamos o metodo de delete ao inves de save, dessa maneira ele
+											// irá deletar o usuario buscando pelo seu id
+		return "redirect:/users/guia-list";
+	}
 }

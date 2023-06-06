@@ -79,7 +79,7 @@
 				<a class="sub-btn"><i class="fas fa-table"></i>Guias<i class="fas fa-angle-right dropdown"></i></a>
 				<div class="sub-menu">
 				<a th:href="@{/users/guia-cadastro}" class="sub-item">Cadastrar</a>
-					<a href="#" onclick="abrirPag(`backend`)" class="sub-item">Listar</a>
+					<a th:href="@{/users/guia-list}" onclick="abrirPag(`backend`)" class="sub-item">Listar</a>
 				</div>
 			</div>
 			
@@ -94,7 +94,7 @@
 			<div class="item">
 				<a class="sub-btn"><i class="fas fa-cogs"></i>Usuário<i class="fas fa-angle-right dropdown"></i></a>
 				<div class="sub-menu">
-					<a th:href="@{/inserirUsuarios}" class="sub-item">Cadastrar</a>
+					<a th:href="@{/users/aluno-cadastro}" class="sub-item">Cadastrar</a>
 					<a th:href="@{/listagem}">Listar</a>
 				</div>
 			</div>
