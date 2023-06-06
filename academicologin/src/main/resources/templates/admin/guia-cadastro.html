@@ -55,21 +55,21 @@
 					</div>
 
 				
-                <form class="form">
+                	<form method="post" action="/inserirGuias" th:object="${guia}">
                     <div class="input-group">
 
                         <div class="input-box">
                             <label class="text-light" for="titulo">Titulo</label>
-                            <input type="text" name="" id="titulo" placeholder="Digite o Titulo">
+                            <input type="text" name="" id="titulo" placeholder="Digite o Titulo" th:field="*{titulo}">
                         </div>
                         <div class="input-box">
                             <label class="text-light" for="descricao">Descrição</label>
-                            <input type="text" name="" id="descricao" placeholder="Digite a descrição">
+                            <input type="text" name="" id="descricao" placeholder="Digite a descrição"th:field="*{descricao}">
                         </div>
 
                         <div class="input-box">
                             <label class="text-light" for="conteudo-escrito">Conteudo escrito</label>
-                           <textarea name="" id="conteudo-escrito" cols="30" rows="10" class="text-area"></textarea>
+                           <textarea name="" id="conteudo-escrito" cols="30" rows="10" class="text-area" th:field="*{conteudoEscrito}"></textarea>
                         </div>
 
                         <div class="input-box">
@@ -80,7 +80,7 @@
 
                         <div class="input-box">
                             <label class="text-light" for="finalizacao">Finalização</label>
-                           <textarea name="" id="finalizacao" cols="30" rows="10" class="text-area"></textarea>
+                           <textarea name="" id="finalizacao" cols="30" rows="10" class="text-area"  th:field="*{conclusao}"></textarea>
                         </div>
                         
                         <div class="container-botao">
