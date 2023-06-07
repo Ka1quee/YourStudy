@@ -50,14 +50,14 @@
 			<div class="container">
 				<div class="card bg-dark text-light">
 					<div class="form-header mb-3 container">
-						<h1 class="css">Cadastro de Guias de Estudo</h1>
+						<h1 class="css">Editar dados  do guia</h1>
 						<h5>Insira as informações</h2>
 					</div>
 
 				
-                	<form method="post" action="/inserirGuias" th:object="${guia}" required>
+                	<form method="post" action="/editar-guia" th:object="${guia}" required>
                     <div class="input-group">
-						<input type="hidden" th:field='*{id}'>
+
                         <div class="input-box">
                             <label class="text-light" for="titulo">Titulo</label>
                             <input type="text" name="" id="titulo" placeholder="Digite o Titulo" th:field="*{titulo}" required>

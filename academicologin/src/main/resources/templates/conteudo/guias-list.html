@@ -28,6 +28,10 @@
                 <div class="header-conteudo bg-primary">
                     <h1 class="titulo-conteudo">Artigos sobre Tecnologia para Programadores</h1>
                     <p class="descricao">Confira nossos artigos exclusivos sobre os mais variados temas sobre Tecnologia e Engenharia da Informação.</p>
+                <form method="post" action="pesquisar-usuario" class="d-flex" role="search">
+					<input class="form-control me-2" type="search" placeholder="Pesquisar Matéria" aria-label="Search">
+					<button class="btn btn-success " type="submit">Pesquisar</button>
+				</form>
                 </div>
 
                 <section class="section-secundaria">
@@ -39,7 +43,7 @@
                         <div class="informacoes-guia">
                             <h1 class="text-light guia-titulo" th:text="${guia.titulo}">Porque é difícil aprender a programar?</h1>
                             <p class="subtitulo text-light" th:text="${guia.descricao}">Está fazendo transição de carreira? A profissão de programador realmente vale o investimento? Essas questões fundamentais você descobre neste artigo! Acompanhe!</p>
-                            <a href="" class="btn btn-primary botao">Ver guia</a>
+                          	<a class="btn btn-primary" th:href="@{/users/guia/{id}(id=${guia.id})}">Ver guia</a>
                         </div>
                     </div>
                 </section>
