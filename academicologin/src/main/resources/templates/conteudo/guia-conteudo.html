@@ -15,7 +15,9 @@
     <title>Guia de estudo</title>
     
     <style>
-
+	.teste{
+		font-size: 300px;
+	}
     </style>
 </head>
 
@@ -30,7 +32,7 @@
         <div class="container-funcoes">
 
             <section class="conteudo-pagina">
-                <div class="header-conteudo">
+                <div class="header-conteudo bg-primary	">
                         <h1 th:text="${guia.titulo}"class="titulo-conteudo">HTML Semântico: Conheça os elementos semânticos da HTML5</h1>
                         <p class="descricao">
                             quibusdam
@@ -43,7 +45,7 @@
                         <h4>Seu guia de estudo <strong clas"react">Front-end</strong></h4>
                     </div>
 <div class="conteudoEscrito">
-                    <span class="teste">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatibus totam quidem
+                    <span th:text="${guia.conteudoEscrito}" class="teste">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatibus totam quidem
                         veritatis velit expedita incidunt amet corporis quia libero! Rerum, ea dolore. Nostrum quaerat
                         sapiente eaque consequatur quas molestias? Lorem ipsum dolor, sit amet consectetur adipisicing
                         elit. Debitis architecto deserunt eos laudantium commodi suscipit nobis, id explicabo ut maiores
@@ -52,7 +54,7 @@
                         totam sit, sequi aperiam quasi nostrum omnis iste obcaecati eligendi voluptatem reiciendis
                         dignissimos impedit est? Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
                         blanditiis ullam iste incidunt amet? Corrupti ipsa est reprehenderit nostrum similique officiis.
-                        Porro corrupti architecto cum alias tenetur iusto rem a. Lorem ipsum, dolor sit amet consectetur
+                        Porro corrupti architecto cum alias tensadsddadsdsadetur iusto rem a. Lorem ipsum, dolor sit amet consectetur
                         adipisicing elit. Nesciunt quaerat, veritatis ab odit laboriosam culpa accusamus impedit sequi
                         qui perspiciatis ullam eaque ex asperiores, rerum quas, repudiandae quisquam suscipit quos.</span>
                         </div>

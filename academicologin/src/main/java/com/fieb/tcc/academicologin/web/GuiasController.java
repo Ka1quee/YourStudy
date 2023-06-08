@@ -29,7 +29,7 @@ public class GuiasController {
 	@PostMapping("inserirGuias")
 	public ModelAndView inserirGuias(Guia guia) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("redirect:/users/guia-list");
+		mv.setViewName("redirect:/users/informacoes-enviadas");
 		guiarepositorio.save(guia);
 
 		return mv;
@@ -102,6 +102,8 @@ public class GuiasController {
 									
 		return mv;
 	}
+	
+	
 	 
 
 }

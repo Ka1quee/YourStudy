@@ -18,7 +18,10 @@ public class AdminController {
 	}
 	
 	
-	
+	@GetMapping("/users/informacoes-enviadas")
+	public String informacoesEnviadas() {
+		return "admin/informacoes-enviadas";
+	}
 	
 
 
