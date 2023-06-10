@@ -26,16 +26,21 @@
 
 			<div class="conteudo-pagina">
 				<div class="header-conteudo bg-primary">
-					<h1 class="titulo-conteudo">Artigos sobre Tecnologia para Programadores</h1>
-					<p class="descricao">Confira nossos artigos exclusivos sobre os mais variados temas sobre Tecnologia
+					<h1 class="titulo-conteudo">Guias sobre Tecnologia para Programadores</h1>
+					<p class="descricao">Confira nossos guias exclusivos sobre os mais variados temas sobre Tecnologia
 						e Engenharia da Informação.</p>
 					<form method="post" action="pesquisar-usuario" class="d-flex" role="search">
-						<input class="form-control me-2 procurar" type="search" placeholder="Pesquisar Guia" aria-label="Search">
-						<button class="btn btn-success pesquisar " type="submit"><i class="fas fa-search"></i></button>
+						<input class="form-control me-2 procurar" type="search" placeholder="Pesquisar Guia"
+							aria-label="Search">
+						<button class="btn btn-secondary pesquisar " type="submit"><i
+								class="fas fa-search"></i></button>
 					</form>
 				</div>
 
 				<section class="section-secundaria">
+					<div class="adicionados">
+						<h1 class="text-light">Últimos lançamentos</h1>
+					</div>
 					<div class="card-guia bg-dark" th:each="guia : ${guiaList}">
 						<div class="container-img-guia">
 							<img src="/img/code.png" alt="" class="img-guia">

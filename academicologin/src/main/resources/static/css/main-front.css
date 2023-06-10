@@ -51,7 +51,7 @@
   height: 500px;
   width: 100%;
   border-radius: 10px;
-    border-top: 1px solid #2e7bab;
+   margin-top: 50px;
 }
 
 .conteudos-titulo {
@@ -72,8 +72,9 @@
 .secao-terciaria {
   height: 800px;
   width: 100%;
-  
+  border-bottom: 1px solid #2e7bab;
   border-radius: 10px;
+
 }
 
 .container
@@ -88,8 +89,8 @@
 }
 
 .card {
-  height: 250px;
-  width: 350px;
+  height: 300px;
+  width: 400px;
   border-top: 5px solid orangered;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
   cursor: pointer;
@@ -116,8 +117,9 @@
 .container-img-card {
   display: flex;
   width: 100%;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  text-align: start;
 }
 
 .img-area {
@@ -141,7 +143,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-padding: 30px;
+
 }
 
 	.card-atividade-recente {

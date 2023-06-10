@@ -63,3 +63,7 @@ a {
 .container-texto-notificacao-hidden {
   display: none;
 }
+
+.info-esquerda h3{
+	font-size: 25px;
+}

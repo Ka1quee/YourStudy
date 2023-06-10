@@ -196,19 +196,26 @@ h1 {
 .section-secundaria{
   width: 100%;
   height: 800px;
-  padding: 70px;
+  margin-top: 100px;
 }
+
+
 
 .card-guia{
   display: flex;
   height: 200px;
   width: 70%;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 80%;
   padding: 30px;
-    gap: 40px;
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-      margin-top: 30px;
+  gap: 40px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+  margin-top: 30px;
+  border-top: 4.5px solid rgb(24, 122, 231);
+}
+
+.exercicio{
+border-top: 4.5px solid rgb(254, 216, 1);
 }
 
 .container-img-guia{
@@ -216,7 +223,8 @@ h1 {
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 20%;
+  width: 15%;
+
 
 }
 
@@ -318,4 +326,18 @@ h1 {
 .procurar{
 	width: 80%;
 }
+
+.salvos{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	border-bottom: 2px solid #2e7bab;
+	background-color: transparent;
+	border-radius: 10px;
+	padding: 25px;
+	gap: 40px;
+	margin-top: 10px;
+}
+
+
 

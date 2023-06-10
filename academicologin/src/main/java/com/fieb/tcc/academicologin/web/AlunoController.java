@@ -26,4 +26,9 @@ public class AlunoController {
 		return "aluno/aluno-cadastro";
 	}
 	
+	@GetMapping("/users/salvos")
+	public String salvos() {
+		return "aluno/salvos";
+	}
+	
 }
