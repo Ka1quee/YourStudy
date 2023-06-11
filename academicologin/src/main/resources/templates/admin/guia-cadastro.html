@@ -11,7 +11,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<link rel="stylesheet" href="/css/admin/guia-cadastro.css">
-		<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/main.css">
 	<title>Cadastro de Guias</title>
 </head>
 <style>
@@ -24,14 +24,12 @@
 	.teste {
 		margin-top: 20px;
 	}
-	
-	.side-bar{
+
+	.side-bar {
 		height: 200vh;
 	}
-	
-	.card{
-		
-	}
+
+	.card {}
 </style>
 
 <body>
@@ -54,40 +52,49 @@
 						<h5>Insira as informações</h2>
 					</div>
 
-				
-                	<form method="post" action="/inserirGuias" th:object="${guia}" required>
-                    <div class="input-group">
-					
-                        <div class="input-box">
-                            <label class="text-light" for="titulo">Titulo</label>
-                            <input type="text" name="" id="titulo" placeholder="Digite o Titulo" th:field="*{titulo}" required>
-                        </div>
-                        <div class="input-box">
-                            <label class="text-light" for="descricao">Descrição</label>
-                            <input type="text" name="" id="descricao" placeholder="Digite a descrição"th:field="*{descricao}"required>
-                        </div>
 
-                        <div class="input-box">
-                            <label class="text-light" for="conteudo-escrito">Conteudo escrito</label>
-                           <textarea name="" id="conteudo-escrito" cols="30" rows="10" class="text-area" th:field="*{conteudoEscrito}"required></textarea>
-                        </div>
+					<form method="post" action="/inserirGuias" th:object="${guia}">
+						<div class="input-group">
 
-                        <div class="input-box">
-                            <label class="text-light" for="img-exemplo">Imagens de exemplo</label>
-                            <input class="sem-borda" type="file" name="" id="img-exemplo" placeholder="">
-                            <input class="sem-borda" type="file" name="" id="img-exemplo" placeholder="">
-                        </div>
+							<div class="input-box">
+								<label class="text-light" for="titulo">Titulo</label>
+								<input type="text" name="" id="titulo" placeholder="Digite o Titulo"
+									th:field="*{titulo}">
 
-                        <div class="input-box">
-                            <label class="text-light" for="finalizacao">Finalização</label>
-                           <textarea name="" id="finalizacao" cols="30" rows="10" class="text-area"  th:field="*{conclusao}" required></textarea>
-                        </div>
-                        
-                        <div class="container-botao">
-                            <button class="btn btn-primary">Enviar</button>
-                        </div>
-                    </div>
-                </form>
+								<div class=" container-erro alert-danger" role="alert"
+									th:if="${#fields.hasErrors('titulo')}">
+									<label class="validation-message" th:errors="*{titulo}"> </label>
+								</div>
+							</div>
+							<div class="input-box">
+								<label class="text-light" for="descricao">Descrição</label>
+								<input type="text" name="" id="descricao" placeholder="Digite a descrição"
+									class="testee" th:field="*{descricao}" required>
+							</div>
+
+							<div class="input-box">
+								<label class="text-light" for="conteudo-escrito">Conteudo escrito</label>
+								<textarea name="" id="conteudo-escrito" cols="30" rows="10" class="text-area"
+									th:field="*{conteudoEscrito}" required></textarea>
+							</div>
+
+							<div class="input-box">
+								<label class="text-light" for="img-exemplo">Imagens de exemplo</label>
+								<input class="sem-borda" type="file" name="" id="img-exemplo" placeholder="">
+								<input class="sem-borda" type="file" name="" id="img-exemplo" placeholder="">
+							</div>
+
+							<div class="input-box">
+								<label class="text-light" for="finalizacao">Finalização</label>
+								<textarea name="" id="finalizacao" cols="30" rows="10" class="text-area"
+									th:field="*{conclusao}" required></textarea>
+							</div>
+
+							<div class="container-botao">
+								<button class="btn btn-primary" id="btnEnviar">Enviar</button>
+							</div>
+						</div>
+					</form>
 				</div>
 
 
@@ -119,6 +126,12 @@
 			});
 
 		});
+
+
+
+
+
+
 
 
 	</script>
