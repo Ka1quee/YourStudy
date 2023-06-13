@@ -54,5 +54,9 @@ public class UserController {
 		return "redirect:/users/perfil/" + user.getEmail();
 	}
 	
+	@GetMapping("/users/your-study")
+	public String yourStudy() {
+		return "aluno/landingPage";
+	}
 
 }
