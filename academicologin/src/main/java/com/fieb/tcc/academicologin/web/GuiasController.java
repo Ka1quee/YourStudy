@@ -130,7 +130,7 @@ public class GuiasController {
 			listaGuias = guiarepositorio.findByNomeContainingIgnoreCase(titulo);
 		}
 		
-		mv.addObject("ListaDeGuias", listaGuias);
+		mv.addObject("guiasList", listaGuias);
 		mv.setViewName("conteudo/pesquisa-guia");
 		
 		return mv; */
@@ -139,4 +139,4 @@ public class GuiasController {
 	
 	 
 
-
+ 
