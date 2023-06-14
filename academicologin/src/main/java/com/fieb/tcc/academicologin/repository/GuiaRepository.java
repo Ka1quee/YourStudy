@@ -5,5 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.fieb.tcc.academicologin.model.Guia;
 
 public interface GuiaRepository extends JpaRepository<Guia, Long> {
+	
+	/*metodo de pesquisa
+	public List<Guia> findByNomeContainingIgnoreCase(String titulo); */
 
 }

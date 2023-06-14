@@ -29,7 +29,7 @@
 					<h1 class="titulo-conteudo">Guias sobre Tecnologia para Programadores</h1>
 					<p class="descricao">Confira nossos guias exclusivos sobre os mais variados temas sobre Tecnologia
 						e Engenharia da Informação.</p>
-					<form method="post" action="pesquisar-usuario" class="d-flex" role="search">
+					<form method="post" action="pesquisar-guia" class="d-flex" role="search" th:object="${guia}">
 						<input class="form-control me-2 procurar" type="search" placeholder="Pesquisar Guia"
 							aria-label="Search">
 						<button class="btn btn-secondary pesquisar " type="submit"><i

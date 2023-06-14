@@ -29,7 +29,12 @@
 		height: 200vh;
 	}
 
-	.card {}
+	
+	.container-erro {
+
+		font-size: 12px;
+		color: red;
+	}
 </style>
 
 <body>
@@ -69,13 +74,13 @@
 							<div class="input-box">
 								<label class="text-light" for="descricao">Descrição</label>
 								<input type="text" name="" id="descricao" placeholder="Digite a descrição"
-									class="testee" th:field="*{descricao}" required>
+									class="testee" th:field="*{descricao}" >
 							</div>
 
 							<div class="input-box">
 								<label class="text-light" for="conteudo-escrito">Conteudo escrito</label>
 								<textarea name="" id="conteudo-escrito" cols="30" rows="10" class="text-area"
-									th:field="*{conteudoEscrito}" required></textarea>
+									th:field="*{conteudoEscrito}" ></textarea>
 							</div>
 
 							<div class="input-box">
@@ -87,7 +92,7 @@
 							<div class="input-box">
 								<label class="text-light" for="finalizacao">Finalização</label>
 								<textarea name="" id="finalizacao" cols="30" rows="10" class="text-area"
-									th:field="*{conclusao}" required></textarea>
+									th:field="*{conclusao}" ></textarea>
 							</div>
 
 							<div class="container-botao">

@@ -1,11 +1,16 @@
 package com.fieb.tcc.academicologin.web;
 
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fieb.tcc.academicologin.model.Guia;
@@ -25,15 +30,25 @@ public class GuiasController {
 		return mv;
 
 	}
-
+	
 	@PostMapping("inserirGuias")
-	public ModelAndView inserirGuias(Guia guia) {
+	public ModelAndView inserirGuias(@Valid Guia guia, BindingResult br ) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("redirect:/users/informacoes-enviadas");
-		guiarepositorio.save(guia);
+		if (br.hasErrors()) {
+			mv.setViewName("admin/guia-cadastro"); // caso tenha algum erro a tela continará em formulario
+			mv.addObject("guia");
+		} else {
 
+			// caso contrario ele redionará para a tela de usuarios cadastrados
+			mv.setViewName("redirect:/users/informacoes-enviadas"); // aqui redirecionamos para a requisição q esta no get, e
+																// nao ao
+			// arquivo na pasta
+			guiarepositorio.save(guia);
+		}
 		return mv;
 	}
+
+
 
 	// listagem de guias
 
@@ -42,7 +57,7 @@ public class GuiasController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("conteudo/guias-list");
 		mv.addObject("guiaList", guiarepositorio.findAll());
-
+		mv.addObject("guia", new Guia());
 		return mv;
 	}
 
@@ -53,7 +68,7 @@ public class GuiasController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("conteudo/listagem-de-guias");
 		mv.addObject("guiaList", guiarepositorio.findAll());
-
+	
 		return mv;
 	}
 
@@ -103,7 +118,25 @@ public class GuiasController {
 		return mv;
 	}
 	
+	/*pesquisar guia
+	
+	@PostMapping("pesquisar-guia")
+	public ModelAndView pesquisarGuia(@RequestParam (required=false) String titulo) {
+		ModelAndView mv = new ModelAndView();
+		List<Guia> listaGuias;
+		if(titulo == null || titulo.trim().isEmpty()) {
+			listaGuias = guiarepositorio.findAll();
+		}else {
+			listaGuias = guiarepositorio.findByNomeContainingIgnoreCase(titulo);
+		}
+		
+		mv.addObject("ListaDeGuias", listaGuias);
+		mv.setViewName("conteudo/pesquisa-guia");
+		
+		return mv; */
+	}
+	
 	
 	 
 
-}
+
