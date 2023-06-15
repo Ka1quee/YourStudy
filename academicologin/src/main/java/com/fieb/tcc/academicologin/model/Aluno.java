@@ -1,9 +1,14 @@
 package com.fieb.tcc.academicologin.model;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @DiscriminatorValue(value = "Aluno")
@@ -27,6 +32,9 @@ public class Aluno extends User {
 		this.position = position;
 	}
 	
-	
+	@OneToMany
+	@JoinColumn(name="user_id")
+	@JsonIgnore
+	private Collection<Favorito>favoritos;
 
 }
