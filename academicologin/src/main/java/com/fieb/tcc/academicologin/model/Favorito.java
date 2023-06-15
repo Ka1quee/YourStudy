@@ -3,6 +3,7 @@ package com.fieb.tcc.academicologin.model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -39,20 +40,63 @@ public class Favorito {
 	@JoinColumn(name="user_id") // Fk
 	private Aluno aluno;
 	
-	@OneToMany
-	@JoinColumn(name="favorito_id")
-	@JsonIgnore
 	
 	
 	
+	@OneToMany(mappedBy = "favorito", cascade = CascadeType.ALL)
+	private List<GuiaFavorito> guiasFavoritos = new ArrayList<GuiaFavorito>();
 
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(
-			  name="favoritos_guias",
-			  joinColumns = @JoinColumn(name="favorito_id", referencedColumnName = "id"),
-			  inverseJoinColumns = @JoinColumn(name="guia_id", referencedColumnName = "id")
-			)
-	private Collection<Guia>guias;
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+
+	public LocalDateTime getData() {
+		return data;
+	}
+
+
+
+	public void setData(LocalDateTime data) {
+		this.data = data;
+	}
+
+
+
+	public Aluno getAluno() {
+		return aluno;
+	}
+
+
+
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
+	}
+
+
+
+	public List<GuiaFavorito> getGuiasFavoritos() {
+		return guiasFavoritos;
+	}
+
+
+
+	public void setGuiasFavoritos(List<GuiaFavorito> guiasFavoritos) {
+		this.guiasFavoritos = guiasFavoritos;
+	}
+
+
+
+
 
 
 	
