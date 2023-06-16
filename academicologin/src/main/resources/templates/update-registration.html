@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="/css/guias.css" />
 	<link rel="stylesheet" href="/css/guias-main.css" />
 	<title>Salvos</title>
+	   <script type="text/javascript" src="/js/busca_cep.js"></script>
 </head>
 
 <body>
@@ -106,7 +107,9 @@
 									<div class="botao-salvar">
 										<button type="submit" class="btn btn-success botao-salvar" id="botao" onclick="">Atualizar
 											Perfil</button>
-
+											
+												<a sec:authorize="isAuthenticated()"><a th:href="@{/logout}" class="btn btn-danger botao-salvar" id="botao" onclick="">Sair</a></a>
+											
 									</div>
 								</form>
 							</div>

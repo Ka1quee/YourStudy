@@ -54,6 +54,9 @@ public class AuthController {
 		return "redirect:/registration?success";
 	}
 	
+
+	
+	
 	@ResponseBody
 	@RequestMapping(value="/registration/ajax/getEmail/{campo}/{valor}")
 	public String getSearchResultViaAjaxRegister(@PathVariable("campo") String campo,
