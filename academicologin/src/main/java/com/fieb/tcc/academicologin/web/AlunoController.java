@@ -62,7 +62,12 @@ public class AlunoController {
 	
 	// método pra exclusão de usuario
 	
-	
+	/*@GetMapping("/users/excluir-user/{id}")
+	public String excluirUser(@PathVariable("id") Long id) {
+	    userService.excluirUser(id);
+	    return "redirect:/users/user-list";
+	} */
+
 	
 	//método pra edição de cadastro de usuario
 	

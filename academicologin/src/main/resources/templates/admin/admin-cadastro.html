@@ -12,7 +12,8 @@
 		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<link rel="stylesheet" href="/css/admin/guia-cadastro.css">
 	<link rel="stylesheet" href="/css/main.css">
-	<title>Cadastro de usuarios</title>
+	<title>Cadastro de Administradores</title>
+	 <script type="text/javascript" src="/js/function.js"></script>
 </head>
 <style>
 	.container-erro {
@@ -52,46 +53,53 @@ form{
 
 			<div class="container">
 				<div class="card bg-dark text-light">
+					
+									<div th:if="${param.success}">
+					<div class="alert alert-info">Cadastro Realizado com sucesso!</div>
+				</div>
 					<div class="form-header mb-3 container">
-						<h1 class="css">Cadastro de novos usuários</h1>
+						<h1 class="react">Cadastro de Administradores</h1>
 						<h5>Insira as informações</h2>
 					</div>
 
 
-					<form th:action="@{/registration-aluno}" method="post" th:object="${user}">
+								<form th:action="@{/registration-admin}" method="post" th:object="${user}">
+					<div class="form-group">
+						<label class="control-label" for="firstName"> Primeiro nome </label>
+						<input id="firstName" class="form-control" th:field="*{firstName}"
+							required autofocus="autofocus" />
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="lastName"> Ultimo nome </label> <input
+							id="lastName" class="form-control" th:field="*{lastName}"
+							required autofocus="autofocus" />
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="email"> Email </label> <input
+							id="email" class="form-control" th:field="*{email}" 
+							onblur="validarDados('email', document.getElementById('email').value,'/registration/ajax/getEmail/');"
+							required
+							autofocus="autofocus" />	
+					</div>
 					
-						<div class="form-group">
-							<label class="control-label" for="firstName"> Primeiro nome </label>
-							<input id="firstName" class="form-control" required
-								autofocus="autofocus" />
-						</div>
+					<div id="campo_email" class="alert alert-danger" style="display: none"></div>
 
-						<div class="form-group">
-							<label class="control-label" for="lastName"> Ultimo nome</label> <input id="lastName"
-								class="form-control"  required autofocus="autofocus" />
-						</div>
+					<div class="form-group">
+						<label class="control-label" for="password"> Senha </label> <input
+							id="password" class="form-control" type="password" th:field="*{password}" 
+							required 
+							autofocus="autofocus" />
+					</div>
 
-						<div class="form-group">
-							<label class="control-label" for="email"> Email </label> <input id="email"
-								class="form-control" 
-								onblur="validarDados('email', document.getElementById('email').value,'/registration/ajax/getEmail/');"
-								required autofocus="autofocus" />
-						</div>
-
-						<div id="campo_email" class="alert alert-danger" style="display: none"></div>
-
-						<div class="form-group">
-							<label class="control-label" for="password"> Senha </label> <input id="password"
-								class="form-control" type="password" required
-								autofocus="autofocus" />
-						</div>
-
-						<div class="form-group">
-							<button type="submit" class="btn btn-success" id="botao" onclick="">Cadastrar</button>
-							<!--<span>Already registered? <a href="/" th:href="@{/login}">Login
-									here</a></span>-->
-						</div>
-					</form>
+					<div class="form-group">
+						<button type="submit" class="btn btn-success"
+						id="botao"
+						onclick=""
+						>Cadastrar</button>
+					</div>
+				</form>
 				</div>
 
 

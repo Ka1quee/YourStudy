@@ -52,6 +52,10 @@
 
 			<div class="container">
 				<div class="card bg-dark text-light">
+					
+										<div th:if="${param.success}">
+						<div class="alert alert-info">Cadastro Realizado com sucesso!</div>
+					</div>
 					<div class="form-header mb-3 container">
 						<h1 class="css">Cadastro de Guias de Estudo</h1>
 						<h5>Insira as informações</h2>

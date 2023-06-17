@@ -37,9 +37,10 @@ public class AuthController {
 	
 	@GetMapping("/registration-admin")
 	public String showRegistrationFormAdmin() {
-		return "registration-admin";
+		return "admin/admin-cadastro";
 	}
 	
+	//usuario comum
 	
 	@PostMapping("/registration")
 	public String registerUserAccount(@ModelAttribute("user") UserDto userDto) {
@@ -47,11 +48,12 @@ public class AuthController {
 		return "redirect:/registration?success";
 	}
 	
+	//admin
 
 	@PostMapping("/registration-admin")
 	public String registerAdminAccount(@ModelAttribute("user") UserDto userDto) {
 		userService.saveAdmin(userDto);
-		return "redirect:/registration?success";
+		return "redirect:/registration-admin?success";
 	}
 	
 

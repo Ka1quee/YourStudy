@@ -40,7 +40,7 @@ public class GuiasController {
 		} else {
 
 			// caso contrario ele redionará para a tela de usuarios cadastrados
-			mv.setViewName("redirect:/users/informacoes-enviadas"); // aqui redirecionamos para a requisição q esta no get, e
+			mv.setViewName("redirect:/users/guia-cadastro?success"); // aqui redirecionamos para a requisição q esta no get, e
 																// nao ao
 			// arquivo na pasta
 			guiarepositorio.save(guia);
@@ -98,7 +98,7 @@ public class GuiasController {
 	@PostMapping("/editar-guia")
 	public ModelAndView alterar(Guia guia) {									
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("redirect:/users/guia-list"); 
+		mv.setViewName("redirect:/users/guia-list");  
 		guiarepositorio.save(guia);
 
 		return mv;

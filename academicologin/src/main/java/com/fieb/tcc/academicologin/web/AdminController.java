@@ -12,6 +12,11 @@ public class AdminController {
 		return "admin/admin-home";
 	}
 	
+	@GetMapping("/admin/teste")
+	public String adminteste() {
+		return "admin/admin-home";
+	}
+	
 	@GetMapping("/users/aluno-cadastro")
 	public String alunoCadastro() {
 		return "admin/aluno-cadastro";
