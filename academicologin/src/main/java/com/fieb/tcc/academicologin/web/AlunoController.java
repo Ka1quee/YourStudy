@@ -60,14 +60,9 @@ public class AlunoController {
 		return mv;
 	}
 	
-	/* método pra exclusão de usuario
-	@GetMapping("/users/excluir-user/{id}")
-	public String excluirUser(@PathVariable("id") Long id) {
-		userrepositorio.deleteById(id); 
-										
-		return "redirect:/users/user-list";
-	}
-	*/
+	// método pra exclusão de usuario
+	
+	
 	
 	//método pra edição de cadastro de usuario
 	
@@ -81,20 +76,11 @@ public class AlunoController {
 		return mv;
 	} 
 	
-	/*@GetMapping("/users/editar-usuario/{username}")
-	public String showPerfilFormUser(@PathVariable("username") String username, ModelMap model) {
-		UserDto userDto = new UserDto();
-		userDto.setEmail(username);
-		User user = userService.findByEmail(userDto);
-		model.addAttribute("user", user);
-		return "admin/aluno-editar";
-	} */
-	
-	// O problema que deu nessa parte acontec por que nao consigo editar um usuario, apenas o que esta logado, resolva.
+	//Método pra salvar a alteração
 	@PostMapping("/users/editar-user")
 	public String updatePerfilAccount(@ModelAttribute("user")UserDto userDto) {
-		User user = userService.update(userDto);
-		return "redirect:/users/editar-usuario/" + user.getEmail();
+		userService.update(userDto);
+		return "redirect:/users/user-list";
 	}
 	
 	@GetMapping("/users/perfil-teste")
