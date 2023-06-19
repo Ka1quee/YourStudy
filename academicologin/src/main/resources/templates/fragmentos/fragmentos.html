@@ -18,7 +18,21 @@
 </style>
 
 <body>
+	<!--Header user sem login -->
+  <header th:fragment="cabecalholanding" class="cabecalho">
+    <nav class="nav-bar">
+      <div class="container-logo">
+        <a th:href="@{/users/your-study}"class="navbar-brand text-light logo">Y.our Study</a>
+      </div>
 
+      <div class="nav-ink">
+        <a th:href="@{/users/your-study}" class="text-light nav-itemm" href=""><i class="fas fa-book"></i>Conteúdos</a>
+        <a class="text-light nav-itemm" href=""><i class="fas fa-users"></i>Quem Somos</a>
+        <a class="text-light nav-itemm" href=""><i class="fas fa-envelope"></i>Fale Conosco</a>
+        <a class="text-light nav-itemm" href="/" th:href="@{/login}"><i class="fas fa-user"></i>Fazer Login</a>
+    </div>
+    </nav>
+  </header>
 <!-- header login -->
 	<header th:fragment="cabecalhologin" class="cabecalho">
 

@@ -36,7 +36,7 @@
 
 	.card-container {
 		display: flex;
-		height: 600px;
+		height: 700px;
 		width: 80vw;
 		background-color: blue;
 
@@ -136,13 +136,13 @@
 					<!-- Na tag form precisamos dizer q o método é post e precisamos trazer o objeto usuario-->
 					<form th:action="@{/registration}" method="post" th:object="${user}">
 						<div class="form-group">
-							<label class="control-label" for="firstName"> First Name </label>
+							<label class="control-label" for="firstName">Primeiro Nome</label>
 							<input id="firstName" class="form-control" th:field="*{firstName}" required
 								autofocus="autofocus" />
 						</div>
 
 						<div class="form-group">
-							<label class="control-label" for="lastName"> Last Name </label> <input id="lastName"
+							<label class="control-label" for="lastName">Ultimo Nome</label> <input id="lastName"
 								class="form-control" th:field="*{lastName}" required autofocus="autofocus" />
 						</div>
 
@@ -156,12 +156,12 @@
 						<div id="campo_email" class="alert alert-danger" style="display: none"></div>
 
 						<div class="form-group">
-							<label class="control-label" for="password"> Password </label> <input id="password"
+							<label class="control-label" for="password"> Senha </label> <input id="password"
 								class="form-control" type="password" th:field="*{password}" required
 								autofocus="autofocus" />
 						</div>
 
-						<button type="submit" class="btn botao" id="botao" onclick="">Register</button>
+						<button type="submit" class="btn botao" id="botao" onclick="">Cadastrar</button>
 
 					</form>
 
@@ -169,10 +169,11 @@
 						<div class="form-group">
 							<span>Ja possui cadastro? <a href="/" th:href="@{/login}">Entre com sua conta</a></span>
 						</div>
-						<div class="form-group">
+						
+						<!--<div class="form-group">
 							<span>Esqueceu sua senha? <a href="/" th:href="@{/recover}">Recupere aqui
 								</a></span>
-						</div>
+						</div> -->
 
 					</div>
 

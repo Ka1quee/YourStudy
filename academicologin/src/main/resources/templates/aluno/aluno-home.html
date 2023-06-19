@@ -15,7 +15,6 @@
 	<link rel="stylesheet" href="/css/cards.css" />
 	<title>Inicio</title>
 </head>
-
 <body>
 	<!-- Cabecalho -->
 	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
@@ -36,7 +35,7 @@
 						JavaScript, para que os usuários possam visualizar e interagir com
 						esse site.
 					</p>
-					<button class="btn btn-primary btn-conhecer">Conhecer</button>
+					<a th:href="@{/users/home}"class="btn btn-primary btn-conhecer">Ver guias</a>
 				</div>
 
 				<div class="container-img">

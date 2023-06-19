@@ -17,6 +17,42 @@
 	<title>Inicio</title>
 </head>
 <style>
+	
+	    header{
+  display: flex;
+  justify-content: space-between;
+}
+.nav-bar{
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  width: 100%;
+  border-bottom: 1px solid #6427a1;
+ 
+}
+
+.nav-itemm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  gap: 10px;
+}
+
+.nav-ink{
+  display: flex;
+  font-size: 16px;
+  width: 50%;
+  flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo{
+  font-size: 25px;
+  font-weight: 600;
+}
 	.conteudo {
 		display: flex;
 		justify-content: center;
@@ -104,7 +140,7 @@
 
 <body>
 	<!-- Cabecalho -->
-	<div th:replace="fragmentos/fragmentos :: cabecalhologin"></div>
+	<div th:replace="fragmentos/fragmentos :: cabecalholanding"></div>
 
 	<!-- side-bar -->
 
