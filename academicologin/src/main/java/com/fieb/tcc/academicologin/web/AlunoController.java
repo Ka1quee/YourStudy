@@ -49,7 +49,7 @@ public class AlunoController {
 	
 	// listagem de usuarios
 	
-	@GetMapping("/users/user-list")
+	@GetMapping("/admin/user-list")
 	public ModelAndView userList(Model model) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("admin/usuario-list");
@@ -105,4 +105,13 @@ public class AlunoController {
 		return "aluno/salvos";
 	}
 	
+	@GetMapping("/home/sobre-nos")
+	public String sobre() {
+		return "aluno/sobre-nos";
+	}
+	
+	@GetMapping("/home")
+	public String home() {
+		return "aluno/landingPage";
+	}
 }

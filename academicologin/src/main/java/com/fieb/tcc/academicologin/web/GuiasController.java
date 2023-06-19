@@ -22,7 +22,7 @@ public class GuiasController {
 	@Autowired
 	private GuiaRepository guiarepositorio;
 
-	@GetMapping("/users/guia-cadastro")
+	@GetMapping("/admin/guia-cadastro")
 	public ModelAndView cadastrarGuia(Guia guia) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("admin/guia-cadastro");
@@ -40,7 +40,7 @@ public class GuiasController {
 		} else {
 
 			// caso contrario ele redionará para a tela de usuarios cadastrados
-			mv.setViewName("redirect:/users/guia-cadastro?success"); // aqui redirecionamos para a requisição q esta no get, e
+			mv.setViewName("redirect:/admin/guia-cadastro?success"); // aqui redirecionamos para a requisição q esta no get, e
 																// nao ao
 			// arquivo na pasta
 			guiarepositorio.save(guia);
@@ -63,7 +63,7 @@ public class GuiasController {
 
 // listagem dos guias em tabela
 
-	@GetMapping("/users/guia-list")
+	@GetMapping("/admin/guia-list")
 	public ModelAndView guiaList() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("conteudo/listagem-de-guias");
@@ -78,7 +78,7 @@ public class GuiasController {
 	public String excluirGuia(@PathVariable("id") Long id) {
 		guiarepositorio.deleteById(id); 
 										
-		return "redirect:/users/guia-list";
+		return "redirect:/admin/guia-list";
 	}
 
 	// editar cadastros
@@ -98,7 +98,7 @@ public class GuiasController {
 	@PostMapping("/editar-guia")
 	public ModelAndView alterar(Guia guia) {									
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("redirect:/users/guia-list");  
+		mv.setViewName("redirect:/admin/guia-list");  
 		guiarepositorio.save(guia);
 
 		return mv;

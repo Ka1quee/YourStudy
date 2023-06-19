@@ -41,71 +41,35 @@
 				<div class="salvar">
 					<button class="btn btn-success"><i class="fas fa-save"></i>Salvar</button>
 
-					<a th:href="@{/users/guias}" class="btn btn-secondary btn-outros"><i class="fas fa-list"></i>Ver outros </a>
+					<a th:href="@{/users/guias}" class="btn btn-secondary btn-outros"><i class="fas fa-list"></i>Ver
+						outros </a>
 				</div>
 				<div class="guia">
 					<div class="titulo-guia">
 						<h4 class="" th:text="${guia.titulo}"></h4>
 					</div>
 					<div class="conteudo-escrito">
-						<span th:text="${guia.conteudoEscrito}" class="teste">Lorem ipsum dolor sit amet consectetur
-							adipisicing elit. Accusamus voluptatibus totam quidem
-							veritatis velit expedita incidunt amet corporis quia libero! Rerum, ea dolore. Nostrum
-							quaerat
-							sapiente eaque consequatur quas molestias? Lorem ipsum dolor, sit amet consectetur
-							adipisicing
-							elit. Debitis architecto deserunt eos laudantium commodi suscipit nobis, id explicabo ut
-							maiores
-							dolore minus cum ex iste reiciendis sapiente et? Eligendi, reiciendis! Lorem, ipsum dolor
-							sit
-							amet consectetur adipisicing elit. Ipsa dolorum veniam repudiandae facilis, repellat maiores
-							totam sit, sequi aperiam quasi nostrum omnis iste obcaecati eligendi voluptatem reiciendis
-							dignissimos impedit est? Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-							blanditiis ullam iste incidunt amet? Corrupti ipsa est reprehenderit nostrum similique
-							officiis.
-							Porro corrupti architecto cum alias tensadsddadsdsadetur iusto rem a. Lorem ipsum, dolor sit
-							amet consectetur
-							adipisicing elit. Nesciunt quaerat, veritatis ab odit laboriosam culpa accusamus impedit
-							sequi
-							qui perspiciatis ullam eaque ex asperiores, rerum quas, repudiandae quisquam suscipit
-							quos.</span>
+
+						<div class="titulo-guia react">
+							<h4 class="" th:text="${guia.topico1}"></h4>
+						</div>
+						<span  th:text="${guia.conteudotopico1}"class="teste">topico 1 ipsum dolor sit amet consectetur
+						</span>
 					</div>
 				</div>
 
-				<div class="imagem-exemplo">
-					<img src="/img/tags-semanticas.jpg" alt="" class="img-exemplo">
-					<img src="/img/tags-semanticas.jpg" alt="" class="img-exemplo">
-				</div>
 
 				<div class="guia">
-					<div class="titulo-guia">
-						<h4>Conclusão</h4>
-					</div>
 					<div class="conteudo-escrito">
-						<p th:text="${guia.conclusao}">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Accusamus
-							voluptatibus totam quidem
-							veritatis velit expedita incidunt amet corporis quia libero! Rerum, ea dolore. Nostrum
-							quaerat
-							sapiente eaque consequatur quas molestias? Lorem ipsum dolor, sit amet consectetur
-							adipisicing
-							elit. Debitis architecto deserunt eos laudantium commodi suscipit nobis, id explicabo ut
-							maiores
-							dolore minus cum ex iste reiciendis sapiente et? Eligendi, reiciendis! Lorem, ipsum dolor
-							sit
-							amet consectetur adipisicing elit. Ipsa dolorum veniam repudiandae facilis, repellat maiores
-							totam sit, sequi aperiam quasi nostrum omnis iste obcaecati eligendi voluptatem reiciendis
-							dignissimos impedit est? Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-							blanditiis ullam iste incidunt amet? Corrupti ipsa est reprehenderit nostrum similique
-							officiis.
-							Porro corrupti architecto cum alias tenetur iusto rem a. Lorem ipsum, dolor sit amet
-							consectetur
-							adipisicing elit. Nesciunt quaerat, veritatis ab odit laboriosam culpa accusamus impedit
-							sequi
-							qui perspiciatis ullam eaque ex asperiores, rerum quas, repudiandae quisquam suscipit quos.
-						</p>
+
+						<div class="titulo-guia react">
+							<h4 class="" th:text="${guia.topico2}"></h4>
+						</div>
+						<span  th:text="${guia.conteudotopico2}" class="teste">topico 1 ipsum dolor sit amet consectetur
+						</span>
 					</div>
 				</div>
+				
 				<div class="pratique-container">
 					<div class="pratique-card bg-dark">
 						<div class="texto-praticar">
@@ -127,7 +91,7 @@
 	</section>
 
 
-<div th:replace="fragmentos/fragmentos :: rodape"></div>
+	<div th:replace="fragmentos/fragmentos :: rodape"></div>
 
 	<script src="/assets/js/abrirPagina.js"></script>
 	<script type="text/javascript">

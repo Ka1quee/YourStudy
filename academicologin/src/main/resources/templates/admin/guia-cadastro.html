@@ -29,7 +29,7 @@
 		height: 200vh;
 	}
 
-	
+
 	.container-erro {
 
 		font-size: 12px;
@@ -52,8 +52,8 @@
 
 			<div class="container">
 				<div class="card bg-dark text-light">
-					
-										<div th:if="${param.success}">
+
+					<div th:if="${param.success}">
 						<div class="alert alert-info">Cadastro Realizado com sucesso!</div>
 					</div>
 					<div class="form-header mb-3 container">
@@ -78,31 +78,37 @@
 							<div class="input-box">
 								<label class="text-light" for="descricao">Descrição</label>
 								<input type="text" name="" id="descricao" placeholder="Digite a descrição"
-									class="testee" th:field="*{descricao}" >
+									class="testee" th:field="*{descricao}">
 							</div>
 
 							<div class="input-box">
-								<label class="text-light" for="conteudo-escrito">Conteudo escrito</label>
-								<textarea name="" id="conteudo-escrito" cols="30" rows="10" class="text-area"
-									th:field="*{conteudoEscrito}" ></textarea>
+								<label class="react" for="descricao">Tópico 1</label>
+								<input type="text" name="" id="descricao" placeholder="Digite a descrição"
+									class="testee" th:field="*{topico1}">
 							</div>
+							
+								<div class="input-box">
+									<label class="react" for="conteudo-escrito">Conteudo topico 1</label>
+									<textarea name="" id="conteudo-escrito" cols="30" rows="10" class="text-area"
+										th:field="*{conteudotopico1}"></textarea>
+								</div>
+
 
 							<div class="input-box">
-								<label class="text-light" for="img-exemplo">Imagens de exemplo</label>
-								<input class="sem-borda" type="file" name="" id="img-exemplo" placeholder="">
-								<input class="sem-borda" type="file" name="" id="img-exemplo" placeholder="">
+								<label class="react" for="descricao">Tópico 2</label>
+								<input type="text" name="" id="descricao" placeholder="Digite a descrição"
+									class="testee" th:field="*{topico2}">
 							</div>
+								<div class="input-box">
+									<label class="react" for="finalizacao">Conteúdo tópico 2</label>
+									<textarea name="" id="finalizacao" cols="30" rows="10" class="text-area"
+										th:field="*{conteudotopico2}"></textarea>
+								</div>
 
-							<div class="input-box">
-								<label class="text-light" for="finalizacao">Finalização</label>
-								<textarea name="" id="finalizacao" cols="30" rows="10" class="text-area"
-									th:field="*{conclusao}" ></textarea>
+								<div class="container-botao">
+									<button class="btn btn-primary" id="btnEnviar">Enviar</button>
+								</div>
 							</div>
-
-							<div class="container-botao">
-								<button class="btn btn-primary" id="btnEnviar">Enviar</button>
-							</div>
-						</div>
 					</form>
 				</div>
 

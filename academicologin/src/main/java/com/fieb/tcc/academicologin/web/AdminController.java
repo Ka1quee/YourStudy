@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class AdminController {
 	
 	
-	@GetMapping("/users/admin-home")
+	@GetMapping("/admin/admin-home")
 	public String adminHome() {
 		return "admin/admin-home";
 	}

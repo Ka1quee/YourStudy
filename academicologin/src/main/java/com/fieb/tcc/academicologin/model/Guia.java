@@ -31,6 +31,10 @@ public class Guia {
 	private String descricao;
 	private String conteudoEscrito;
 	private String conclusao;
+	private String topico1;
+	private String conteudotopico1;
+	private String conteudotopico2;
+	private String topico2;
 	
 	//Getters and setters
 	
@@ -65,7 +69,40 @@ public class Guia {
 		this.conclusao = conclusao;
 	}
 	
+	public String getTopico1() {
+		return topico1;
+	}
+	public void setTopico1(String topico1) {
+		this.topico1 = topico1;
+	}
+	public String getTopico2() {
+		return topico2;
+	}
+	public void setTopico2(String topico2) {
+		this.topico2 = topico2;
+	}
 	
+
+
+
+
+	public String getConteudotopico1() {
+		return conteudotopico1;
+	}
+	public void setConteudotopico1(String conteudotopico1) {
+		this.conteudotopico1 = conteudotopico1;
+	}
+	public String getConteudotopico2() {
+		return conteudotopico2;
+	}
+	public void setConteudotopico2(String conteudotopico2) {
+		this.conteudotopico2 = conteudotopico2;
+	}
+
+
+
+
+
 	@OneToMany(mappedBy = "guia", cascade = CascadeType.ALL)
 	private List<GuiaFavorito> guiasFavoritos = new ArrayList<GuiaFavorito>();
 	

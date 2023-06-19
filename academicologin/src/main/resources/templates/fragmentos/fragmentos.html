@@ -19,29 +19,30 @@
 
 <body>
 	<!--Header user sem login -->
-  <header th:fragment="cabecalholanding" class="cabecalho">
-    <nav class="nav-bar">
-      <div class="container-logo">
-        <a th:href="@{/users/your-study}"class="navbar-brand text-light logo">Y.our Study</a>
-      </div>
+	<header th:fragment="cabecalholanding" class="cabecalho">
+		<nav class="nav-bar">
+			<div class="container-logo">
+				<a th:href="@{/users/your-study}" class="navbar-brand text-light logo">Y.our Study</a>
+			</div>
 
-      <div class="nav-ink">
-        <a th:href="@{/users/your-study}" class="text-light nav-itemm" href=""><i class="fas fa-book"></i>Conteúdos</a>
-        <a class="text-light nav-itemm" href=""><i class="fas fa-users"></i>Quem Somos</a>
-        <a class="text-light nav-itemm" href=""><i class="fas fa-envelope"></i>Fale Conosco</a>
-        <a class="text-light nav-itemm" href="/" th:href="@{/login}"><i class="fas fa-user"></i>Fazer Login</a>
-    </div>
-    </nav>
-  </header>
-<!-- header login -->
+			<div class="nav-ink">
+				<a th:href="@{/home}" class="text-light nav-itemm" href=""><i
+						class="fas fa-book"></i>Conteúdos</a>
+				<a class="text-light nav-itemm" th:href="@{/home/sobre-nos}"><i class="fas fa-users"></i>Quem Somos</a>
+				<a class="text-light nav-itemm" href=""><i class="fas fa-envelope"></i>Fale Conosco</a>
+				<a class="text-light nav-itemm" href="/" th:href="@{/login}"><i class="fas fa-user"></i>Fazer Login</a>
+			</div>
+		</nav>
+	</header>
+	<!-- header login -->
 	<header th:fragment="cabecalhologin" class="cabecalho">
 
 		<nav class="navbar nav bg-dark">
 			<div class="container-fluid">
 				<a class="navbar-brand text-light">Y.our Study</a>
 			</div>
-			
-			
+
+
 		</nav>
 
 
@@ -53,10 +54,10 @@
 		<nav class="navbar nav bg-dark">
 			<div class="container-fluid">
 				<a class="navbar-brand text-light">Y.our Study</a>
-				 <a th:href = "@{/users/dashboard}"}class="react" sec:authentication="principal.username"> User</a>
+				<a th:href="@{/users/dashboard}" }class="react" sec:authentication="principal.username"> User</a>
 			</div>
-			
-			
+
+
 		</nav>
 
 
@@ -88,33 +89,25 @@
 
 	<div th:fragment="side-bar" class="side-bar bg-dark">
 		<div class="menu">
-			<div class="item"><a th:href="@{/users/admin-home}"><i class="fas fa-desktop"></i>Dashboard</a></div>
+			<div class="item"><a th:href="@{/admin/admin-home}"><i class="fas fa-desktop"></i>Dashboard</a></div>
 			<div class="item">
-				<a class="sub-btn"><i class="fas fa-table"></i>Guias<i class="fas fa-angle-right dropdown"></i></a>
-				<div class="sub-menu">
-				<a th:href="@{/users/guia-cadastro}" class="sub-item">Cadastrar</a>
-					<a th:href="@{/users/guia-list}" onclick="abrirPag(`backend`)" class="sub-item">Listar</a>
-				</div>
-			</div>
-			
-						<div class="item">
-				<a class="sub-btn"><i class="fas fa-table"></i>Exercícios<i class="fas fa-angle-right dropdown"></i></a>
-				<div class="sub-menu">
-					<a href="#" onclick="abrirPag(`frontend`)" class="sub-item">Cadastrar</a>
-					<a href="#" onclick="abrirPag(`backend`)" class="sub-item">Listar</a>
-				</div>
+				
+					<a th:href="@{/admin/guia-cadastro}" class="sub-item"><i class="fas fa-book"></i>Cadastrar Guia</a>
+					<a th:href="@{/admin/guia-list}" onclick="abrirPag(`backend`)" class="sub-item"><i class="fas fa-table"></i>Listar guias</a>
+				
 			</div>
 
+
 			<div class="item">
-				<a class="sub-btn"><i class="fas fa-cogs"></i>Usuário<i class="fas fa-angle-right dropdown"></i></a>
+				<a class="sub-btn"><i class="fas fa-users"></i>Usuário<i class="fas fa-angle-right dropdown"></i></a>
 				<div class="sub-menu">
 					<a th:href="@{/users/aluno-cadastro}" class="sub-item">Cadastrar</a>
-					<a th:href="@{/listagem}">Listar</a>
+					<a th:href="@{/admin/user-list}">Listar</a>
 				</div>
 			</div>
 
 
-<!--
+			<!--
 			<div class="item">
 				<a class="sub-btn"><i class="fas fa-cogs"></i>Admin<i class="fas fa-angle-right dropdown"></i></a>
 				<div class="sub-menu">
@@ -123,12 +116,6 @@
 				</div>
 			</div>
 			-->
-
-
-
-
-
-			<div class="item"><a href="index.html"><i class="fas fa-info-circle"></i>Sobre</a></div>
 		</div>
 	</div>
 
@@ -139,12 +126,9 @@
 		<div class="menu">
 			<div class="item"><a th:href="@{/users/home}"><i class="fas fa-home"></i>Inicio</a></div>
 			<div class="item">
-				<a class="sub-btn"><i class="fas fa-table"></i>Conteúdos<i class="fas fa-angle-right dropdown"></i></a>
-				<div class="sub-menu">
-					<a th:href="@{/users/guias}" class="sub-item">Guias</a>
-					<a th:href="@{/users/exercicios}" class="sub-item">Exercícios </a>
-				</div>
-					<div class="item"><a th:href="@{/users/salvos}"><i class="fas fa-save"></i>Salvos</a></div>
+				<a th:href="@{/users/guias}" class="sub-item"><i class="fas fa-table"></i>Guias</a>
+				<a th:href="@{/users/exercicios}" class="sub-item"><i class="fas fa-book"></i>Exercícios </a>
+				<!--<div class="item"><a th:href="@{/users/salvos}"><i class="fas fa-save"></i>Salvos</a></div>-->
 			</div>
 
 			<!--
@@ -165,14 +149,14 @@
 				<a th:href="@{/users/dashboard}"><i class="fas fa-user"></i>Área do usuário</a>
 			</div>
 
-			<div class="item"><a href="index.html"><i class="fas fa-info-circle"></i>Sobre</a></div>
+			<!--<div class="item"><a href="index.html"><i class="fas fa-info-circle"></i>Sobre</a></div>-->
 		</div>
 	</div>
 
 
-<!-- Rodapé -->
+	<!-- Rodapé -->
 
-<footer th:fragment="rodape" class="text-center text-lg-start bg-dark text-light">
+	<footer th:fragment="rodape" class="text-center text-lg-start bg-dark text-light">
 		<!-- Section: Social media -->
 		<section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
 			<!-- Left -->
@@ -218,9 +202,10 @@
 							<i class="fas fa-gem me-3 text-secondary"></i>Your Study
 						</h6>
 						<p>
-							Olá! Nós somos um grupo de estudantes, que trabalhamos desenvolvendo uma aplicação para outros estudantes, focando sempre no aprendizado em Informática e programação.
+							Olá! Nós somos um grupo de estudantes, que trabalhamos desenvolvendo uma aplicação para
+							outros estudantes, focando sempre no aprendizado em Informática e programação.
 
-  
+
 						</p>
 					</div>
 					<!-- Grid column -->
@@ -252,7 +237,7 @@
 						<h6 class="text-uppercase fw-bold mb-4">Contato</h6>
 						<p>
 							<i class="fas fa-home me-3 text-secondary"></i> Jardim Belval - Barueri, SP
-							
+
 						</p>
 						<p>
 							<i class="fas fa-envelope me-3 text-secondary"></i>
