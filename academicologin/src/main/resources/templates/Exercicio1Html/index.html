@@ -1,0 +1,102 @@
+<!-- Created By CodingNepal - www.codingnepalweb.com  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Exercicios</title>
+   
+    <link rel="stylesheet" href="/css/style.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <!-- FontAweome CDN Link for Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+</head>
+<style>
+
+</style>
+<body class="">
+    <header th:fragment="cabecalho2" class="cabecalho">
+        <nav class="navbar bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand text-light">Y.our Study</a>
+                <form class="d-flex" role="search">
+                    <a th:href="@{/users/user-home}"class="btn btn-primary sair" type="submit">Voltar</a>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <!-- start Quiz button -->
+    <div class="start_btn"><button class="btn btn-primary">Iniciar</button></div>
+
+    <!-- Info Box -->
+    <div class="info_box bg-dark text-light">
+        <div class="info-title"><span>Algumas regras para os exercicios </span></div>
+        <div class="info-list">
+            <div class="info">1. Você terá apenas <span>15 segundos</span> pra cada questão.</div>
+            <div class="info">2. Uma vez que você selecionou uma questão, ela não poderá ser desfeita.</div>
+            <div class="info">3. Quando o tempo acabar você nao poderá selecionar uma alternativa.</div>
+            <div class="info">4. Você não poderá sair enquanto ainda estiver realizando as questões.</div>
+            <div class="info">5. Você ganhará pontos baseado nas respostas corretas.</div>
+        </div>
+        <div class="buttons">
+            <button class="quit">Sair</button>
+            <button class="restart">Continuar</button>
+        </div>
+    </div>
+
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+        <header class="bg-dark">
+            <div class="title text-light">HTML: Tags essenciais</div>
+            <div class="timer bg-dark">
+                <div class="time_left_txt text-light">Tempo restante</div>
+                <div class="timer_sec">15</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+        <section class="bg-dark text-light">
+            <div class="que_text ">
+                <!-- Here I've inserted question from JavaScript -->
+            </div>
+            <div class="option_list  text-dark">
+                <!-- Here I've inserted options from JavaScript -->
+            </div>
+        </section>
+
+        <!-- footer of Quiz Box -->
+        <footer class="bg-secondary text-light">
+            <div class="total_que">
+                <!-- Here I've inserted Question Count Number from JavaScript -->
+            </div>
+            <button class="next_btn">Proxima</button>
+        </footer>
+    </div>
+
+    <!-- Result Box -->
+    <div class="result_box bg-dark text-light">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">Você finalizou todas as questões</div>
+        <div class="score_text">
+            <!-- Here I've inserted Score Result from JavaScript -->
+        </div>
+        <div class="buttons">
+            <button class="restart">Tentar novamente</button>
+            <button class="quit">Sair</button>
+        </div>
+    </div>
+
+    <button class=""> </button>
+    
+
+    <!-- Inside this JavaScript file I've inserted Questions and Options only -->
+    <script src="/js/js/questions.js"></script>
+
+    <!-- Inside this JavaScript file I've coded all Quiz Codes -->
+    <script src="/js/js/script.js"></script>
+
+</body>
+</html>

@@ -11,4 +11,9 @@ public class ConteudoController {
 	public String exercicios() {
 		return "conteudo/exercicios-list";
 	}
+	
+	@GetMapping("/users/exercicio-html")
+	public String exercicioHtml() {
+		return "Exercicio1Html/index";
+	}
 }
