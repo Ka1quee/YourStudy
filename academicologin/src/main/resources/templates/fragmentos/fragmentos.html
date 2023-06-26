@@ -29,7 +29,7 @@
 				<a th:href="@{/home}" class="text-light nav-itemm" href=""><i
 						class="fas fa-book"></i>Conteúdos</a>
 				<a class="text-light nav-itemm" th:href="@{/home/sobre-nos}"><i class="fas fa-users"></i>Quem Somos</a>
-				<a class="text-light nav-itemm" href=""><i class="fas fa-envelope"></i>Fale Conosco</a>
+				<a class="text-light nav-itemm" th:href="@{/home/fale-conosco}"><i class="fas fa-envelope"></i>Fale Conosco</a>
 				<a class="text-light nav-itemm" href="/" th:href="@{/login}"><i class="fas fa-user"></i>Fazer Login</a>
 			</div>
 		</nav>
@@ -94,7 +94,7 @@
 				
 					<a th:href="@{/admin/guia-cadastro}" class="sub-item"><i class="fas fa-book"></i>Cadastrar Guia</a>
 					<a th:href="@{/admin/guia-list}" onclick="abrirPag(`backend`)" class="sub-item"><i class="fas fa-table"></i>Listar guias</a>
-				
+					<a th:href="@{/admin/mensagem}" onclick="abrirPag(`backend`)" class="sub-item"><i class="fas fa-table"></i>Listar Mensagens</a>
 			</div>
 
 

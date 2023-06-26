@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/fale-conosco.css">
+    <title>Fale Conosco</title>
+</head>
+<style>
+  header{
+    display: flex;
+    justify-content: space-between;
+  }
+.nav-bar{
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    width: 100%;
+    border-bottom: 1px solid #6427a1;
+   
+  }
+  
+  .nav-itemm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    gap: 10px;
+  }
+  
+  .nav-ink{
+    display: flex;
+    font-size: 16px;
+    width: 50%;
+    flex-wrap: wrap;
+  }
+
+  .logo{
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+.container-card{
+	margin-top: 100px;
+}
+</style>
+
+<body>
+  <!-- Cabecalho -->
+<div th:replace="fragmentos/fragmentos :: cabecalholanding"></div>
+
+    <main class="conteudo container">
+        <!-- <div class="container-titulo">
+            <h1 class="text-light titulo">Fale Conosco</h1>
+        </div> -->
+
+        <div class="container-card">
+            <div class="card-form">
+                <div class="titulo-card">
+					
+					<div th:if="${param.success}">
+						<div class="alert alert-info">Cadastro Realizado com sucesso!</div>
+					</div>
+                    <h2 class="text-primary">
+                        Fale Conosco
+                    </h2>
+
+                    <h5 class="text-light">Inisira as informações</h5>
+                </div>
+
+                   	<form class="form"  method="post" action="/inserirMensagem" th:object="${faleconosco}">
+                        <div class="input-group">
+
+                            <div class="input-box">
+                                <label class="text-light" for="nome">Nome</label>
+                                <input type="text" name="" id="nome" placeholder="Digite Seu Nome"th:field="*{nome}">
+                            </div>
+                            <div class="input-box">
+                                <label class="text-light" for="email">Email</label>
+                                <input class="text-light" type="text" name="" id="email" placeholder="Digite Seu Nome"th:field="*{email}">
+                            </div>
+
+                            <div class="input-box">
+                                <label class="text-light" for="msg">Mensagem</label>
+                                <textarea name="" id="msg" cols="30" rows="10" th:field="*{motivo}"></textarea>
+                            </div>
+                            <div class="container-botao">
+                            <button class="btn btn-primary">Enviar</button>
+                        </div>
+                        </div>
+                    </forn>
+                </div>
+            </div>
+        </div>
+
+    </main>
+<div th:replace="fragmentos/fragmentos :: rodape"></div>
+    <script src="/assets/js/abrirPagina.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".sub-btn").click(function () {
+                $(this).next(".sub-menu").slideToggle();
+                $(this).find(".dropdown").toggleClass("rotate");
+            });
+
+            $(".menu-btn").click(function () {
+                $(".side-bar").addClass("active");
+                $(".menu-btn").css("visibility", "hidden");
+            });
+
+            $(".close-btn").click(function () {
+                $(".side-bar").removeClass("active");
+                $(".menu-btn").css("visibility", "visible");
+            });
+        });
+    </script>
+</body>
+
+</html>
